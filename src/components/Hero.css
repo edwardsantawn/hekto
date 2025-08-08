@@ -1,0 +1,19 @@
+@media (max-width: 1200px) {
+  .whole {
+    background-color: white;
+  }
+  .dots,
+  .diamond {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  /*.wrapper {
+    transform: scale(1.05);
+  } */ 
+
+  .headphones {
+    transform: scale(1.05);
+  }
+}
