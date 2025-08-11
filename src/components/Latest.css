@@ -2,7 +2,40 @@
     .latest {
         margin-top: 0;
     }
+
+    .box {
+        margin:0;
+        padding-left: 40px  !important;
+        padding-right: 40px  !important;
+    }
 }
 
+@media (max-width: 500px) {
+    .latest-section h2 {
+    font-size: 36px ;
+    line-height: 40px;
+    }
+    .toppings {
+        font-size: 14px;
+    }
+    .box {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+}
 
+@media (max-width: 430px) {
+  .latest-section h2 {
+    font-size: 32px ;
+  }
+    .toppings {
+        gap: 12px;
+        font-size: 12px;
+    }
+}
 
+@media (max-width: 350px) {
+  .latest-section h2 {
+    font-size: 28px ;
+  }
+}

@@ -1,21 +1,25 @@
 import subscribe from '../assets/subscribe.svg';
 
 export default function Subscribe() {
-    return (
-        <section
-            className="flex flex-col items-center justify-center bg-no-repeat bg-center bg-cover h-[432px] "
-            style={{ backgroundImage: `url(${subscribe})` }}
-        >
-            <div className="w-[768px] h-[208px] flex flex-col items-center justify-center gap-[60px]">
-                <h2 className="text-[44px] font-bold text-[#101750] tracking-[1.5%] leading-[52px] text-center">
-                    Get Latest Update By Subscribe Our Newsletter
-                </h2>
-                <div className="flex flex-row h-[52px] items-center gap-[16px]">
-                    <button className="bg-[#FB2E86] text-white h-[52px] w-[151px] px-[40px] py-[16px] rounded-[8px] font-semibold leading-[20px] text-[16px]">
-                        Subscribe
-                    </button>
-                </div>
-            </div>
-        </section>
-    );
+  return (
+    <section
+      className="w-full max-w-[1920px] mx-auto bg-no-repeat bg-center bg-cover min-h-[432px] flex items-center justify-center px-4"
+      style={{ backgroundImage: `url(${subscribe})` }}
+    >
+      <div className="w-full max-w-[768px] min-h-[208px] flex flex-col items-center justify-center gap-6 md:gap-[60px] text-center">
+        <h2 className="text-[#101750] font-bold tracking-[1.5%]
+                       text-[28px] leading-8 md:text-[44px] md:leading-[52px]">
+          Get Latest Update By Subscribe Our Newsletter
+        </h2>
+
+        <div className="flex items-center justify-center">
+          <button
+            className="bg-[#FB2E86] text-white h-[52px] px-[40px] rounded-[8px] font-semibold text-[16px] leading-[20px]"
+          >
+            Subscribe
+          </button>
+        </div>
+      </div>
+    </section>
+  );
 }

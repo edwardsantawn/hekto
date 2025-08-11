@@ -7,52 +7,52 @@ import './Hero.css';
 
 export default function Hero() {
   return (
-    <section
-      className="w-[1920px]  wrapper h-[760px] bg-[#F2F0FF] whole relative grid"
-      style={{
-        gridTemplateColumns: '1fr auto',
-        alignItems: 'center',
-      }}
-    >
-      <img 
-      src={ellipse1}
-      alt="dot" 
-      className="dots absolute"
-      style={{
-        top:503,
-        left:184
-      }}
+    <section className="wrappers relative w-full max-w-[1920px] mx-auto min-h-[760px] bg-[#F2F0FF] overflow-hidden hero">
+      {/* Dots */}
+      <img
+        src={ellipse1}
+        alt="dot"
+        className="block absolute hero__dots"
+        style={{ top: '26.2vw', left: '9.6vw' }}
       />
-      {/* Lamp: absolutely positioned, 70px from left, overlaps text by 47px */}
+
+      {/* Lamp */}
       <img
         src={lamp}
         alt="lamp"
-        className="absolute"
+        className="block absolute hero__lamp"
         style={{
-          left: 70,
+          left: '3.6vw',
           top: 0,
           zIndex: 10,
-
+          width: '20vw',
+          maxWidth: 387,
+          minWidth: 100,
+          height: 'auto',
         }}
       />
 
-      {/* Center: Text content */}
-        <div
-          className="flex flex-col gap-[24px] absolute"
-          style={{
-            width: '570px',
-            height: '296px',
-            top: '203px',
-            left: '415px',
-            opacity: 1,
-            zIndex: 20,
-          }}
-        >
-        <span className="mb-[-8px] text-[#FB2E86] text-[16px] leading-[20px] font-bold">Best Headphones For Your Life...</span>
-        <h1 className="mb-[-8px] text-[52px] max-w-[570px] leading-[64px] tracking-[1.5%] font-bold">
+      {/* Text content */}
+      <div
+        className="flex flex-col gap-6 absolute hero__text"
+        style={{
+          width: '29.7vw', minWidth: 260, maxWidth: 570,
+          height: '15.4vw', maxHeight: 296,
+          top: '26.7%',
+          left: '21.6vw',
+          zIndex: 20,
+        }}
+      >
+        <span className="mb-[-8px] text-[#FB2E86] text-[16px] leading-[20px] best font-bold">
+          Best Headphones For Your Life...
+        </span>
+        <h1 className="mb-[-8px] new text-[52px] max-w-full leading-[64px] tracking-[1.5%] font-bold">
           New Trendy Collection <br /> Headphones
         </h1>
-        <p className="mb-[-8px] text-[#8A8FB9] text-[16px] max-w-[551px] leading-[20px] font-normal">
+        <p
+          className="mb-[-8px] text-[#8A8FB9] text-[16px] leading-[20px] font-normal"
+          style={{ width: '29.688vw', maxWidth: 570, height: '2.1vw', maxHeight: 40 }}
+        >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.
         </p>
         <button className="bg-[#FB2E86] text-white text-[16px] px-8 py-3 rounded-[8px] font-semibold w-[156px] h-[52px] shadow hover:bg-[#d81b6a] transition">
@@ -60,35 +60,30 @@ export default function Hero() {
         </button>
       </div>
 
-      {/* Headphones: absolutely positioned, 231px from right */}
-      <img
-        src={headphones}
-        alt="headphones"
-        className="headphones absolute"
+      {/* Headphones + Discount */}
+      <div
+        className="block absolute hero__product"
         style={{
-          left: 1041,
-          top: 34,
+          width: '36vw',
+          maxWidth: 692,
+          height: '36.8vw',
+          maxHeight: 706,
+          top: '50%',
+          right: '9vw',
           zIndex: 15,
+          transform: 'translateY(-50%)',
         }}
+      >
+        <img src={headphones} alt="headphones" className="w-full h-full object-contain" />
+        <img src={discount} alt="50% Off" className="absolute hero__badge" style={{ top: '7%', right: '5%', zIndex: 20 }} />
+      </div>
+
+      {/* bottom diamond */}
+      <img
+        src={diamond}
+        alt=""
+        className="absolute diamond bottom-6 left-1/2 -translate-x-1/2 z-10 select-none pointer-events-none"
       />
-      <img 
-      src={discount}
-      alt="discount tag" 
-      className="absolute"
-      style={{
-        left: 1598,
-        top: 94,
-        zIndex: 15,
-      }}
-      />
-      <img src={diamond} 
-      alt="diamond" 
-      className="diamond absolute" 
-      style={{
-        left: 917,
-        top: 697,
-        zIndex: 15,
-      }} />
     </section>
   );
 }
