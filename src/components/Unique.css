@@ -18,6 +18,17 @@
  }
 }
 
+.unique {
+  gap: 33px !important;
+}
+
+@media (max-width: 1200px)  {
+  .unique{
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
 @media (max-width: 1200px) {
   .unique {
     gap: 24px !important;
@@ -37,6 +48,16 @@
   } */
   #root > div > main > section.w-full.bg-\[\#F1F0FF\] > div > div > div.w-full.max-w-\[534px\].right.min-h-\[337px\].flex.flex-col.gap-\[48px\].mx-auto > span {
     text-align: center !important;
+  }
+
+    .unique{
+    padding-bottom: 40px;
+  }
+}
+@media (max-width: 500px) {
+  .unique {
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
 

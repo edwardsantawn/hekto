@@ -257,7 +257,7 @@ export default function Listing() {
                                         <img
                                             src={selectedBrands.includes(brand) ? checked1 : unchecked1}
                                             alt={selectedBrands.includes(brand) ? 'Checked' : 'Unchecked'}
-                                            className="w-5 h-5"
+                                            className="w-4 h-4"
                                         />
                                     </span>
                                     <span className="select-none">{brand}</span>
@@ -278,18 +278,18 @@ export default function Listing() {
                         </div>
                         <ul className="text-[#8A8FB9] text-[16px] space-y-4">
                             {discounts.map((discount) => (
-                                <li key={discount} className="flex items-center gap-3">
+                                <li key={discount} className="flex items-center gap-2">
                                     <span
                                         onClick={() => handleToggle(selectedDiscounts, setSelectedDiscounts, discount)}
-                                        className="cursor-pointer"
+                                        className="cursor-pointer family-lato"
                                     >
                                         <img
                                             src={selectedDiscounts.includes(discount) ? checked2 : unchecked2}
                                             alt={selectedDiscounts.includes(discount) ? 'Checked' : 'Unchecked'}
-                                            className="w-5 h-5"
+                                            className="w-4 h-4"
                                         />
                                     </span>
-                                    <span className="select-none">{discount}</span>
+                                    <span className="select-none text-[16px] font-normal leading-[20px] family-lato whitespace-nowrap flex">{discount}</span>
                                 </li>
                             ))}
                         </ul>
@@ -315,7 +315,7 @@ export default function Listing() {
                                         <img
                                             src={selectedRatings.includes(rating) ? checked3 : unchecked3}
                                             alt={selectedRatings.includes(rating) ? 'Checked' : 'Unchecked'}
-                                            className="w-5 h-5"
+                                            className="w-4 h-4"
                                         />
                                     </span>
                                     <span className="flex gap-1 select-none">
@@ -353,7 +353,7 @@ export default function Listing() {
                                         <img
                                             src={selectedCategories.includes(cat) ? checked2 : unchecked2}
                                             alt={selectedCategories.includes(cat) ? 'Checked' : 'Unchecked'}
-                                            className="w-5 h-5"
+                                            className="w-4 h-4"
                                         />
                                     </span>
                                     <span className="select-none">{cat}</span>
@@ -382,7 +382,7 @@ export default function Listing() {
                                         <img
                                             src={selectedPrices.includes(price) ? checked2 : unchecked2}
                                             alt={selectedPrices.includes(price) ? 'Checked' : 'Unchecked'}
-                                            className="w-5 h-5"
+                                            className="w-4 h-4"
                                         />
                                     </span>
                                     <span className="select-none">{price}</span>
@@ -402,7 +402,7 @@ export default function Listing() {
                             {products.map((product, i) => (
                                 <div
                                     key={i}
-                                    className="rounded-[8px] another w-full max-w-[304px] h-[448px] bg-white flex flex-col items-center transition-shadow cursor-pointer"
+                                    className="rounded-[8px] another w-full max-w-[304px] h-full max-h-[448px] bg-white flex flex-col items-center transition-shadow cursor-pointer"
                                     style={{
                                         boxShadow: '8px 24px 32px -16px #10175026'
                                     }}
@@ -410,7 +410,7 @@ export default function Listing() {
                                     onMouseLeave={e => e.currentTarget.style.boxShadow = '8px 24px 32px -16px #10175026'}
                                     onClick={() => navigate('/details', { state: { product } })}
                                 >
-                                    <div className="group w-full max-w-[288px] min-w-[120px] h-[200px] bg-white rounded-[8px] flex items-center justify-center relative transition-colors duration-300">
+                                    <div className="group w-full max-w-[288px]  h-full max-h-[200px] bg-white rounded-[8px] flex items-center justify-center relative transition-colors duration-300">
                                         {/* Sale badge for Perfume */}
                                         {product.name === 'Perfume' && (
                                             <img
@@ -422,7 +422,7 @@ export default function Listing() {
                                         <img
                                             src={product.img}
                                             alt={product.name}
-                                            className="w-full max-w-[288px] h-[200px] rounded-[4px] pl-[8px] pr-[8px] pt-[8px] object-contain"
+                                            className="w-full max-w-[288px] h-full max-h-[200px] rounded-[4px] pl-[8px] pr-[8px] pt-[8px] object-contain"
                                         />
                                     </div>
                                     <div className="w-full info px-4 py-4 h-[160px] flex flex-col items-start">
@@ -455,7 +455,7 @@ export default function Listing() {
                                                 </span>
                                             )}
                                         </span>
-                                        <span className="text-[#8A8FB9] text-[14px] mt-[24px] leading-[18px]">
+                                        <span className="text-[#8A8FB9] desc text-[14px] mt-[24px] leading-[18px]">
                                             {product.desc}
                                         </span>
                                     </div>

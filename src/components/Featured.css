@@ -1,22 +1,42 @@
 @media (max-width: 1440px) {
-  .carousel { 
-    margin-left: 40px;
+  .carousels { 
+    margin-left: auto;
+    margin-right: auto;
   }
-
+  .track {
+    padding: 0 40px ;
+  }
 }
 
 
 @media (max-width: 768px) {
   .carousel {
-    margin-right: 24px;
-    margin-left: 24px;
+    margin-left: auto;
+    margin-right: auto;
   }
   .track {}
 
   #root > div > main > section.w-full.featured.max-w-\[1920px\].mx-auto.bg-white.text-center.p-0.m-0 > div > div.flex.mt-\[60px\].justify-center.gap-\[10px\] {
     display: none !important;
   }
+  /* Animate dot width */
+.track label[for^="item-"] {
+  transition: width .25s ease;
 }
+
+/* When a slide is active, make its dot 24px wide */
+.track:has(#item-1:checked) label[for="item-1"],
+.track:has(#item-2:checked) label[for="item-2"],
+.track:has(#item-3:checked) label[for="item-3"],
+.track:has(#item-4:checked) label[for="item-4"] {
+  width: 24px;
+}
+ .prices {
+    padding-bottom: 20px !important;
+  }
+
+ }
+
 
 @media (max-width: 640px) {
   .price {
@@ -29,7 +49,7 @@
 
 @media (max-width: 560px) {
   .item {
-    gap: 10px;
+    /* gap: 10px; */
     max-height: 330px;
     width: 100%;
   }
@@ -43,8 +63,8 @@
     min-height: 470px;
   }
   .carousel {
-    margin-right: 20px;
-    margin-left: 20px;
+    margin-left: auto;
+    margin-right: auto;
     gap: 52px;
   }
 
@@ -52,10 +72,15 @@
     font-size: 36px ;
     line-height: 40px;
   }
+    .track {
+    padding: 0 20px ;
+  }
 }
 
 @media (max-width: 430px) {
   .carousel {
+    margin-left: auto !important;
+    margin-right: auto !important;
     display: grid !important;
     grid-template-columns: 1fr !important;
   }
@@ -89,4 +114,17 @@
     width: 100%;
     min-height: 400px;
   }
+}
+
+/* Animate dot width */
+.track label[for^="item-"] {
+  transition: width .25s ease;
+}
+
+/* When a slide is active, make its dot 24px wide */
+.track:has(#item-1:checked) label[for="item-1"],
+.track:has(#item-2:checked) label[for="item-2"],
+.track:has(#item-3:checked) label[for="item-3"],
+.track:has(#item-4:checked) label[for="item-4"] {
+  width: 24px;
 }

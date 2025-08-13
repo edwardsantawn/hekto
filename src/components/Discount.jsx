@@ -5,7 +5,7 @@ import './Discount.css';
 export default function Discount() {
   return (
     <section className="w-full bg-[#FFF] max-w-[1920px] mx-auto wrapper flex flex-col items-center">
-      <h2 className="leading-[52px] above mt-[114px] text-[#101750] text-[44px] font-bold tracking-[1.5%] text-center mb-[24px]">
+      <h2 className="leading-[52px] above mt-[200px] text-[#101750] text-[44px] font-bold tracking-[1.5%] text-center mb-[24px]">
         Discount Item
       </h2>
 
