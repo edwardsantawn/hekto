@@ -2,7 +2,8 @@
 #root > div > main > div > section > aside {
         margin-right: auto !important;
     }
-#root > div > main > div > section > div > div.grid.grid-cols-3.gap-8.w-full.justify-end.max-w-\[976px\] {
+#root > div > main > div > section > div > div.grid.grid-cols-3.gap-8.w-full.justify-end.max-w-\[976px\],
+.list {
     margin-left: auto !important;
 }
 

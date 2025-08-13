@@ -74,7 +74,14 @@ export default function Header() {
               Wishlist <img src={heart} alt="heart" />
             </span>
             <span className="flex items-center gap-1.5 text-[16px] font-semibold leading-5">
-              <img src={cart} alt="cart" />
+              <button
+                onClick={() => navigate('/cart')}
+                className="bg-transparent border-none p-0 m-0 cursor-pointer"
+                aria-label="Cart"
+                style={{ display: 'flex', alignItems: 'center', background: 'none' }}
+              >
+                <img src={cart} alt="cart" />
+              </button>
             </span>
           </div>
         </div>

@@ -462,13 +462,14 @@ export default function Listing() {
                             ))}
                         </div>
                     ) : (
-                        <div className="flex flex-col w-full max-w-[976px] gap-8">
+                        <div className="flex list flex-col w-full max-w-[976px] gap-8">
                             {products.map((product, i) => (
                                 <div
                                     key={i}
                                     className="rounded-[8px] bg-white flex flex-row items-center shadow transition-shadow p-[16px] cursor-pointer"
                                     style={{
-                                        height: 232,
+                                        maxHeight: 232,
+                                        height: '100%',
                                         boxShadow: '8px 24px 32px -16px #10175026'
                                     }}
                                     onMouseEnter={e => e.currentTarget.style.boxShadow = '8px 64px 80px -16px #10175026'}
@@ -490,7 +491,7 @@ export default function Listing() {
                                             className="h-[200px] w-[288px] object-contain"
                                         />
                                     </div>
-                                    <div className="flex-1 w-[616px] h-[105px] flex flex-col justify-center">
+                                    <div className="flex-1 w-full max-w-[616px] h-[105px] flex flex-col justify-center">
                                         <div className="flex items-center w-full mb-1">
                                             <span className="text-[#101750] font-bold text-[20px] h-[24px] mb-[8px] leading-[24px]">
                                                 {product.name}

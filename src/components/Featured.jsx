@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom'; // <-- Add this import
 import watch from '../assets/watch.svg';
 import maxes from '../assets/maxes.svg';
 import macs from '../assets/macs.svg';
@@ -16,21 +17,15 @@ const products = [
 ];
 
 export default function Featured() {
+	const navigate = useNavigate(); // <-- Add this
+
 	return (
 		<section className="w-full featured max-w-[1920px] mx-auto bg-white text-center p-0 m-0">
 			<h2 className="text-[2.75rem] font-bold pt-[100px] text-[#1A0B5B]">
 				Featured Products
 			</h2>
 
-			<div
-				className="
-          relative w-full max-w-[1312px] mx-auto px-4 overflow-visible track
-          [&:has(#item-1:checked)_label[for='item-1']]:bg-[#FB2E86]
-          [&:has(#item-2:checked)_label[for='item-2']]:bg-[#FB2E86]
-          [&:has(#item-3:checked)_label[for='item-3']]:bg-[#FB2E86]
-          [&:has(#item-4:checked)_label[for='item-4']]:bg-[#FB2E86]
-        "
-			>
+			<div className="relative w-full max-w-[1312px] mx-auto px-4 overflow-visible track">
 				{/* Radios (only affect md+ carousel) */}
 				<input
 					type="radio"
@@ -106,6 +101,9 @@ export default function Featured() {
                     w-[101px] h-[36px] left-1/2 -translate-x-1/2 bottom-[5px] px-[16px] py-[11px] rounded-[6px]
                     opacity-0 group-hover:opacity-100 transition-opacity duration-300
                   "
+									onClick={() =>
+										navigate('/details', { state: { product: p } }) // <-- Add this
+									}
 								>
 									View Details
 								</button>
