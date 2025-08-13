@@ -3,6 +3,37 @@
 /* --- Responsive Styles --- */
 
 /* Large tablets and below */
+
+
+
+@media (max-width: 1440px) {
+  .details-main {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  .details-related{
+    margin: 0 !important;
+  }
+  /* .details-tabs-inner {
+    padding-left: 40px;
+    padding-right: 40px;
+  } */
+  .details-tab-content .details-desc-text {
+    width: 100% !important;
+  }
+
+  .details-actions {
+    gap: 10px ;
+  }
+
+}
+
+@media (max-width: 930px) {
+    .details-heart {
+        display: none !important;
+    }
+}
+
 @media (max-width: 1200px) {
   .details-main {
     margin-left: 32px !important;
@@ -22,6 +53,19 @@
   .details-tab-content .details-desc-text {
     width: 100% !important;
   }
+  .details-tab-content {
+    gap: 32px;
+  }
+}
+
+@media (max-width: 1024px) {
+    .details-desc-list {
+        padding-top: 20px;
+    }
+
+    .details-desc-more {
+        padding-top: 60px;
+    }
 }
 
 /* Tablets */
@@ -31,6 +75,10 @@
     align-items: stretch !important;
     margin: 32px 0 !important;
     gap: 32px !important;
+  }
+
+  .details-page {
+    padding-top: 40px;
   }
   .details-thumbnails,
   .details-thumb-gap,
@@ -91,13 +139,16 @@
     padding: 0 8px !important;
   }
   .details-related-title {
-    font-size: 24px !important;
+    font-size: 32px !important;
     margin-bottom: 24px !important;
+    justify-content: center !important;
+    text-align: center !important;
+
   }
   .details-related-list {
     gap: 16px !important;
     flex-wrap: wrap !important;
-    justify-content: flex-start !important;
+    justify-content: center !important;
   }
   .details-related-card {
     width: 48vw !important;
@@ -156,7 +207,7 @@
     padding: 0 4px !important;
   }
   .details-related-title {
-    font-size: 16px !important;
+    font-size: 22px !important;
     margin-bottom: 12px !important;
   }
   .details-related-list {
@@ -168,6 +219,20 @@
     max-width: 100% !important;
     margin-bottom: 12px !important;
   }
+
+    .details-desc-more {
+        padding-top: 100px;
+    }
+}
+
+@media (max-width: 500px) {
+        .details-desc-more {
+        padding-top: 40px;
+    }
+    .details-desc-text {
+        height: 100% !important;
+        max-height: 100% !important;
+    }
 }
 
 /* Extra small mobile */

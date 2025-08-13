@@ -48,8 +48,8 @@ export default function Details() {
         {product.name === 'Headphones' && (
           <>
             <div
-              className="details-thumbnails flex flex-col"
-              style={{ width: 192, height: 438, gap: 15 }}
+              className="details-thumbnails max-w-[192px] max-h-[438px] flex flex-col"
+              style={{ width: '100%', height: '100%', gap: 15 }}
             >
               {headphonesImages.map((img, idx) => (
                 <img
@@ -58,10 +58,10 @@ export default function Details() {
                   alt={`Headphones ${idx + 1}`}
                   width={192}
                   height={134}
-                  className="details-thumbnail-img"
+                  className=" max-w-[192px] max-h-[134px] details-thumbnail-img"
                   style={{
-                    width: 192,
-                    height: 134,
+                    width: '100%',
+                    height: '100%',
                     marginBottom: idx < 2 ? 15 : 0,
                     objectFit: 'cover',
                     borderRadius: 8,
@@ -71,13 +71,17 @@ export default function Details() {
               ))}
             </div>
             {/* 32px gap between thumbnails and big image */}
-            <div className="details-thumb-gap" style={{ width: 32 }} />
+            <div className="details-thumb-gap max-w-[32px]" style={{ width: '100%', height: '100%' }} />
           </>
         )}
         {/* Big Image */}
         <div
-          className="details-image bg-white rounded-[8px] flex items-center justify-center shadow"
-          style={{ width: 528, height: 438 }}
+          className="details-image bg-white rounded-[8px] flex items-center justify-center"
+          style={{
+            width: 528,
+            height: 438,
+            boxShadow: '0px 32px 80px 0px #10175014',
+          }}
         >
           <img
             src={product.name === 'Headphones' ? head : product.img}
@@ -97,7 +101,7 @@ export default function Details() {
         {/* 144px gap between big image and info */}
         <div className="details-info-gap" style={{ width: 144 }} />
         {/* Info */}
-        <div className="details-info flex flex-col w-[413px] justify-start mt-[40px] flex-1">
+        <div className="details-info flex flex-col w-full max-w-[413px] justify-start mt-[40px] flex-1">
           <h1 className="details-title text-[#101750] font-bold text-[32px] mb-2">{product.name}</h1>
           <div className="details-rating flex gap-2 mb-[24px]">
             {[...Array(5)].map((_, i) => (
@@ -114,11 +118,11 @@ export default function Details() {
               <span className="details-sale text-[#FB2E86] font-normal leading-[16px] line-through text-[14px]">{product.sale}</span>
             )}
           </div>
-          <p className="details-desc text-[#A9ACC6] text-[16px] leading-[20px] font-normal w-[413px] mb-16">
+          <p className="details-desc text-[#A9ACC6] text-[16px] leading-[20px] font-normal w-full max-w-[413px] mb-16">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tellus porttitor purus, et volutpat sit.
           </p>
           <div className="details-actions flex items-center gap-8 mt-4">
-            <button className="details-addcart bg-[#FB2E86] hover:bg-[#e11d6a] text-white leading-[20px] text-[16px] font-bold rounded-[8px] h-[52px] w-[171px] px-10 transition-colors whitespace-nowrap">
+            <button className="details-addcart bg-[#FB2E86] hover:bg-[#e11d6a] text-white leading-[20px] text-[16px] font-bold rounded-[8px] h-[52px] w-full max-w-[171px] px-10 transition-colors whitespace-nowrap">
               Add To Cart
             </button>
             <img src={blackheart} alt="heart" className="details-heart" />
@@ -166,7 +170,7 @@ export default function Details() {
 
       {/* Related Products Carousel */}
       <div className="details-related w-full bg-white py-[100px] flex">
-        <div className="details-related-inner w-[1312px] ml-[304px]">
+        <div className="details-related-inner w-[1312px] mx-auto">
           <section>
             <h2 className="details-related-title text-[36px] leading-[44px] tracking-[1.5%] font-bold text-[#101750] mb-10 text-left">Related Products</h2>
             <div className="details-related-list flex gap-8 w-full">
