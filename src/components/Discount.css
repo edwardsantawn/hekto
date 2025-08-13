@@ -55,6 +55,12 @@
   }
 }
 
+@media (max-width: 768px) {
+  .above {
+    margin-top: 120px !important;
+  }
+}
+
 @media (max-width: 500px) {
   .discount {
     padding-left: 20px !important;

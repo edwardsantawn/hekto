@@ -18,18 +18,19 @@
 }
 
 /* --- Responsive padding for shadows --- */
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .carousels {
     padding-left: 60px;
     padding-right: 60px;
     height: 100%;
   }
 
-  #root > div > main > section.w-full.featured.max-w-\[1920px\].mx-auto.bg-white.text-center.p-0.m-0 > div {
-    max-height: 100%;
+.track,
+.carousels {
+    max-height: 100% !important;
   }
-  .carousel-dots {
-    display: none;
+#root > div > main > section.w-full.featured.max-w-\[1920px\].mx-auto.bg-white.text-center.p-0.m-0 > div > div.flex.justify-center.pt-\[60px\].gap-\[10px\] {
+    display: none !important;
   }
   .price {
     padding-bottom: 20px !important;
@@ -43,19 +44,35 @@
 @media (max-width: 768px) {
   .carousels {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 32px;
     justify-items: center;
     align-items: stretch;
     overflow-x: unset;
     padding-left: 0;
     padding-right: 0;
+    padding-bottom: 20px;
   }
   .item {
     width: 100% !important;
     max-width: 400px;
     margin-left: auto;
     margin-right: auto;
+  }
+}
+
+
+@media (max-width: 640px) {
+  .carousels {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- Single column for small screens --- */
+@media (max-width: 500px) {
+  .carousels {
+    grid-template-columns: 1fr;
+    gap: 32px;
   }
 }
 
