@@ -47,7 +47,7 @@
 } */
 
 @media (max-width: 1440px) {
-  #root > div > main > section > div {
+  .cart-main-row {
     margin-right: 40px;
     margin-left: 40px;
   }
