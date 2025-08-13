@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import one from '../assets/one.svg';
 import two from '../assets/two.svg';
 import three from '../assets/three.svg';
@@ -14,14 +15,21 @@ export default function Cart() {
   // Uncomment below for empty cart demo:
   // const [cart, setCart] = useState([]);
 
+  const navigate = useNavigate();
+
   const subtotal = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
 
   if (cart.length === 0) {
     return (
-      <section className="flex flex-col items-center justify-center min-h-[60vh]">
-        <img src={emptyCart} alt="Empty Cart" className="w-64 mb-8" />
-        <h2 className="text-2xl font-bold text-[#101750] mb-4">Your Cart Is Empty</h2>
-        <button className="bg-[#FB2E86] text-white px-8 py-3 rounded-md font-semibold hover:bg-[#d81b6a] transition">
+      <section className="flex flex-col items-center justify-center py-[80px]">
+        <img src={emptyCart} alt="Empty Cart" className="mb-[51px]" />
+        <h2 className="text-[36px] leading-[44px] tracking-[1.5%] font-bold text-[#101750] mb-[51px]">
+          Your Cart Is Empty
+        </h2>
+        <button
+          className="bg-[#FB2E86] text-white px-10 py-4 rounded-md font-semibold text-[16px] leading-[20px] hover:bg-[#d81b6a] transition"
+          onClick={() => navigate('/listing')}
+        >
           Start Shopping
         </button>
       </section>
@@ -30,7 +38,7 @@ export default function Cart() {
 
   return (
     <section className="cart-section w-full bg-[#FFF] px-2 sm:px-6 md:px-12 py-[104px]">
-      <div className="cart-main-row flex justify-between flex-col md:flex-row w-full max-w-[1200px] mx-auto gap-8 md:gap-12">
+      <div className="cart-main-row flex justify-between flex-col md:flex-row w-full max-w-[1089px] mx-auto gap-8 md:gap-[145px]">
         {/* Cart Items */}
         <div className="cart-items-col flex-1 w-full md:max-w-[640px]">
           <div className="flex flex-col gap-6 w-full">
@@ -39,12 +47,12 @@ export default function Cart() {
                 key={i}
                 className="flex items-center bg-white rounded-[8px] h-[104px] w-full"
               >
-                <img src={item.img} alt={item.name} className="object-contain rounded-l-[8px] h-full w-[104px] min-w-[72px]" />
-                <div className="flex-1 pl-4 sm:pl-6">
+                <img src={item.img} alt={item.name} className="object-contain pic rounded-l-[8px] h-full max-h-[104px] w-full max-w-[149px] min-w-[72px]" />
+                <div className="flex-1 information pl-4 sm:pl-6">
                   <div className="font-bold name leading-[28px] text-[#101750] text-[18px] sm:text-[18px]">{item.name}</div>
                   <div className="text-[#101750] price leading-[20px] text-[16px]">${item.price.toFixed(2)}</div>
                 </div>
-                <div className="flex box items-center p-[2px] rounded-[8px] border border-[#E5E0FC] justify-between w-[90px] sm:w-[100px] h-[40px] mx-2">
+                <div className="flex boxes items-center p-[2px] rounded-[8px] border border-[#E5E0FC] justify-between w-[90px] sm:w-[100px] h-[40px] mx-2">
                   <button
                     className="w-8 h-8 rounded text-[#101750] font-bold"
                     onClick={() => {
@@ -82,7 +90,7 @@ export default function Cart() {
         </div>
         {/* Cart Summary + Clear Cart */}
         <div className="cart-summary-col flex flex-col items-center w-full md:w-[350px]">
-          <div className="cart-summary-box w-full bg-[#F8F8FD] rounded-[12px] shadow-[0_8px_24px_rgba(0,0,0,0.05)] p-4 sm:p-8 h-fit mt-2 flex flex-col items-center">
+          <div className="cart-summary-box max-w-[304px] w-full bg-[#F8F8FD] rounded-[12px] shadow-[0_8px_24px_rgba(0,0,0,0.05)] p-4 sm:p-8 h-fit mt-2 flex flex-col items-center">
             <div className="w-full mb-6">
               <div className="flex justify-between items-center border-b border-[#E5E0FC] pb-4 mb-4">
                 <span className="font-bold text-[20px] text-[#101750]">Subtotal:</span>
