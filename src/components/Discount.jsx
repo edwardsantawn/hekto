@@ -4,8 +4,8 @@ import './Discount.css';
 
 export default function Discount() {
   return (
-    <section className="w-full bg-[#FFF] max-w-[1920px] mx-auto wrapper flex flex-col items-center">
-      <h2 className="leading-[52px] above mt-[200px] text-[#101750] text-[44px] font-bold tracking-[1.5%] text-center mb-[24px]">
+    <section className="w-full pt-[200px] h-full max-h-[894px] discount-section bg-[#FFF] max-w-[1920px] mx-auto wrapper flex flex-col items-center">
+      <h2 className="leading-[52px] above  text-[#101750] text-[44px] font-bold tracking-[1.5%] text-center mb-[24px]">
         Discount Item
       </h2>
 
@@ -16,9 +16,9 @@ export default function Discount() {
       </div>
 
       {/* fluid inner container */}
-      <div className="w-full max-w-[1310px] h-full max-h-[568px] discount mx-auto px-4 grid md:grid-cols-2 items-center gap-8 mb-[100px]">
+      <div className="w-full max-w-[1310px] items-center justify-center h-full max-h-[568px] discount mx-auto px-4 grid md:grid-cols-2 items-center gap-8 ">
         {/* Left */}
-        <div className="w-full max-w-[534px] min-h-[337px] flex flex-col gap-[24px] mx-auto">
+        <div className="w-full max-w-[640px] h-full max-h-[341px] flex flex-col gap-[24px] mx-auto">
           <span className="text-[#101750] -mt-[25px] font-bold text-[36px] leading-[44px] tracking-[1.5%]">
             20% Discount Of All Products
           </span>
@@ -79,7 +79,7 @@ export default function Discount() {
           <img
             src={airpods}
             alt="Airpods"
-            className="max-w-[520px] w-full h-auto object-contain"
+            className=" w-full h-full object-contain"
           />
         </div>
       </div>

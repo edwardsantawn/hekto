@@ -14,7 +14,7 @@ const categories = [
 
 export default function Top() {
   return (
-    <section className="bg-[#FFF] pt-[114px] w-full max-w-[1920px] mx-auto wrapper flex flex-col items-center">
+    <section className="bg-[#FFF] top-section pt-[114px] w-full max-w-[1920px] mx-auto wrapper flex flex-col items-center">
       <h2 className="leading-[52px] text-[#101750] text-[44px] font-bold tracking-[1.5%] text-center mb-[48px]">
         Top Categories
       </h2>

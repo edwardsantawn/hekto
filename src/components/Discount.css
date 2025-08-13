@@ -12,7 +12,7 @@
 @media (max-width: 1024px) {
   .discount {
     grid-template-columns: 1fr !important;
-    gap: 100px !important;
+    gap: 40px !important;
   }
   #root > div > main > section.w-full.bg-\[\#FFF\].max-w-\[1920px\].mx-auto.wrapper.flex.flex-col.h-\[894px\].items-center > div.w-full.max-w-\[1310px\].min-h-\[568px\].discount.mx-auto.px-4.grid.md\:grid-cols-2.items-center.gap-8.mb-\[100px\] > div.w-full.max-w-\[534px\].min-h-\[337px\].flex.flex-col.gap-\[24px\].mx-auto {
     padding-top: 40px !important;
@@ -28,6 +28,13 @@
   }
   #root > div > main > section.w-full.bg-\[\#FFF\].max-w-\[1920px\].mx-auto.wrapper.flex.flex-col.max-h-\[894px\].h-full.items-center > div.w-full.max-w-\[1310px\].min-h-\[568px\].discount.mx-auto.px-4.grid.md\:grid-cols-2.items-center.gap-8.mb-\[100px\] > div.w-full.max-w-\[534px\].min-h-\[337px\].flex.flex-col.gap-\[24px\].mx-auto > div.flex.flex-col.gap-\[16px\] > div.flex.flex-row.gap-\[32px\] {
    
+  }
+
+  .discount {
+    max-height: 100% !important;
+  }
+  #root > div > main > section.w-full.pt-\[200px\].h-full.bg-\[\#FFF\].max-w-\[1920px\].mx-auto.wrapper.flex.flex-col.items-center > div.w-full.max-w-\[1310px\].items-center.justify-center.h-full.max-h-\[568px\].discount.mx-auto.px-4.grid.md\:grid-cols-2.items-center.gap-8 > div.flex-none.headphone.flex.items-center.justify-center.min-h-\[337px\] > img {
+    transform: scale(0.85);
   }
   /* #root > div > main > section.w-full.bg-\[\#FFF\].max-w-\[1920px\].mx-auto.wrapper.flex.flex-col.max-h-\[894px\].h-full.items-center > div.w-full.max-w-\[1310px\].min-h-\[568px\].discount.mx-auto.px-4.grid.md\:grid-cols-2.items-center.gap-8.mb-\[100px\] > div.w-full.max-w-\[534px\].min-h-\[337px\].flex.flex-col.gap-\[24px\].mx-auto > div.flex.flex-col.gap-\[16px\] > div.flex.flex-row.gap-\[32px\] > div:nth-child(1) {
     flex-direction: row;
@@ -59,12 +66,21 @@
   .above {
     margin-top: 120px !important;
   }
+  #root > div > main > section.w-full.pt-\[200px\].h-full.discount.bg-\[\#FFF\].max-w-\[1920px\].mx-auto.wrapper.flex.flex-col.items-center > div.w-full.max-w-\[1310px\].items-center.justify-center.h-full.max-h-\[568px\].discount.mx-auto.px-4.grid.md\:grid-cols-2.items-center.gap-8 > div.flex-none.headphone.flex.items-center.justify-center.min-h-\[337px\] > img {
+    transform: none !important;
+    width: 606px !important;
+    height: 540px !important;
+  }
+
+  .discount-section {
+    gap: 64px !important;
+  }
 }
 
 @media (max-width: 500px) {
-  .discount {
-    padding-left: 20px !important;
-    padding-right: 20px !important;
+  .discount-section {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
 
       #root > div > main > section.w-full.bg-\[\#FFF\].max-w-\[1920px\].mx-auto.wrapper.flex.flex-col.max-h-\[894px\].h-full.items-center > h2 {

@@ -138,3 +138,9 @@
   background: #FB2E86;
   transform: scale(1.15);
 }
+
+@media (max-width: 1024px) {
+  #root > div > main > section.bg-\[\#FFF\].top-section.pt-\[114px\].w-full.max-w-\[1920px\].mx-auto.wrapper.flex.flex-col.items-center {
+    padding-top: 100px !important; 
+  }
+}
