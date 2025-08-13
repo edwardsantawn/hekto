@@ -34,7 +34,7 @@ export default function Featured() {
         {/* Mobile/tablet: grid; Desktop: carousel track */}
         <div
           className="
-            grid grid-cols-1 sm:grid-cols-2 gap-[64px] sm:gap-6 carousels mt-[72px] overflow-visible
+            grid grid-cols-1 rectangle sm:grid-cols-2 gap-[64px] sm:gap-6 carousels mt-[72px] overflow-visible
             md:flex md:w-max md:gap-[32px] md:items-stretch md:mx-auto
             md:transition-transform md:duration-500 md:ease-in-out
             md:[&:has(~#item-1:checked)]:translate-x-0

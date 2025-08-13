@@ -256,3 +256,28 @@
     gap: 4px !important;
   }
 }
+/* Make the track scrollable & touch-friendly without affecting layout */
+.related-track {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;              /* Firefox hide scrollbar */
+}
+.related-track::-webkit-scrollbar {    /* WebKit hide scrollbar */
+  display: none;
+}
+
+/* Each card snaps neatly; do not change size/margins/padding */
+.related-item {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  flex: 0 0 auto;   /* keep existing width, prevent flex wrapping */
+  /* no other size/spacing changes */
+}
+
+/* Hide dots without changing layout height */
+.related-dots {
+  visibility: hidden;   /* keeps space; use your existing dots wrapper class */
+}

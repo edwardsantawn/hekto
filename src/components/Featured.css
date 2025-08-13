@@ -128,3 +128,26 @@
 .track:has(#item-4:checked) label[for="item-4"] {
   width: 24px;
 }
+
+/* Enable horizontal swipe/scroll on the Featured carousel (md+) */
+@media (min-width: 768px) {
+  /* Make the outer container scrollable */
+  .rectangle {
+    overflow-x: auto;                 /* allow swipe/drag scroll */
+    overflow-y: visible;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;    /* clean snapping */
+    scrollbar-width: none;            /* Firefox hide scrollbar */
+  }
+  .rectangle::-webkit-scrollbar {         /* WebKit hide scrollbar */
+    display: none;
+  }
+
+  /* Snap each card cleanly without altering its size/margins */
+  .item {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    flex: 0 0 auto;                   /* ensure horizontal flow */
+  }
+}
