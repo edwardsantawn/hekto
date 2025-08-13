@@ -20,24 +20,25 @@ export default function Top() {
       </h2>
 
       {/* shell + overflow hidden */}
-      <div className="carousel-wrapper w-full max-w-[1280px] mx-auto px-4 overflow-hidden">
-        {/* Track: grid on mobile, carousel on md+ */}
+      <div className="carousel-wrapper w-full max-w-[1280px] mx-auto px-4 overflow-visible">
+        {/* Horizontally scrollable carousel */}
         <div
           className="
-            carousel
-            grid grid-cols-1 sm:grid-cols-2 gap-[64px] sm:gap-6 mt-[72px] overflow-visible
-            md:flex md:w-max md:gap-[32px] md:items-stretch md:mx-auto
-            md:transition-transform md:duration-500 md:ease-in-out
-            md:[&:has(~#top-item-1:checked)]:translate-x-0
-            md:[&:has(~#top-item-2:checked)]:-translate-x-[304px]
-            md:[&:has(~#top-item-3:checked)]:-translate-x-[608px]
-            md:[&:has(~#top-item-4:checked)]:-translate-x-[912px]
+            carousel flex gap-[32px] w-full overflow-x-auto overflow-y-hidden
+            overscroll-x-contain touch-pan-x px-[30px] md:px-[60px] scrollbar-hide
+            mt-[72px]
           "
-          style={{ willChange: 'transform' }}
+          style={{
+            scrollSnapType: 'x mandatory',
+            WebkitOverflowScrolling: 'touch',
+          }}
         >
           {categories.map((cat, i) => (
-            <div className="carousel-item flex-none flex flex-col items-center bg-transparent p-0 m-0" key={i}>
-              {/* ——— your item markup unchanged ——— */}
+            <div
+              className="carousel-item flex-none flex flex-col items-center bg-transparent p-0 m-0"
+              key={i}
+              style={{ scrollSnapAlign: 'start' }}
+            >
               <div className="group flex flex-col gap-[32px] items-center cursor-pointer transition-all">
                 <div className="relative w-[272px] h-[272px] rounded-full bg-[#F6F7FB] flex items-center justify-center mb-[24px] overflow-hidden border-2 border-transparent transition-all duration-300 group-hover:shadow-[0_8px_24px_rgba(251,46,134,0.10)]">
                   <img src={cat.img} alt={cat.label} className="w-[272px] h-[272px] rounded-full object-cover relative z-10" />
@@ -50,12 +51,11 @@ export default function Top() {
                   {cat.label}
                 </span>
               </div>
-              {/* ——— end unchanged item markup ——— */}
             </div>
           ))}
         </div>
 
-        {/* Radios MUST be after the track for :has(~#id:checked) to work */}
+        {/* Radios for dot highlighting (optional, can be removed if not needed) */}
         <input type="radio" name="top-carousel" id="top-item-1" defaultChecked className="hidden" />
         <input type="radio" name="top-carousel" id="top-item-2" className="hidden" />
         <input type="radio" name="top-carousel" id="top-item-3" className="hidden" />

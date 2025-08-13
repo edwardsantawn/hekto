@@ -34,27 +34,27 @@ export default function Featured() {
         {/* Mobile/tablet: grid; Desktop: carousel track */}
         <div
           className="
-            grid grid-cols-1 rectangle sm:grid-cols-2 gap-[64px] sm:gap-6 carousels mt-[72px] overflow-visible
-            md:flex md:w-max md:gap-[32px] md:items-stretch md:mx-auto
-            md:transition-transform md:duration-500 md:ease-in-out
-            md:[&:has(~#item-1:checked)]:translate-x-0
-            md:[&:has(~#item-2:checked)]:-translate-x-[336px]
-            md:[&:has(~#item-3:checked)]:-translate-x-[672px]
-            md:[&:has(~#item-4:checked)]:-translate-x-[1008px]
+            carousels flex gap-[32px] overflow-x-auto overflow-y-hidden
+            overscroll-x-contain touch-pan-x px-[30px] md:px-[60px] scrollbar-hide
+            mt-[72px]
           "
-          style={{ willChange: 'transform' }}
+          style={{
+            scrollSnapType: 'x mandatory',
+            WebkitOverflowScrolling: 'touch',
+          }}
         >
           {products.map((p, i) => (
             <article
               key={i}
               className="
-                w-full md:w-[304px] bg-white rounded-[12px] item
+                w-[280px] md:w-[304px] bg-white rounded-[12px] item
                 shadow-[0_8px_24px_rgba(0,0,0,0.05)]
-                flex flex-col items-center md:flex-none
-                min-h-[368px]
+                flex flex-col items-center flex-shrink-0
+                min-h-[368px] h-full
                 transition-shadow transform duration-300 group
                 hover:shadow-[8px_64px_80px_-16px_rgba(16,23,80,0.15)] hover:-translate-y-2
               "
+              style={{ scrollSnapAlign: 'start' }}
             >
               <div className="relative mb-[24px] w-full flex justify-center items-center h-auto max-h-[472px]">
                 {/* Hover icons */}
@@ -93,7 +93,7 @@ export default function Featured() {
               <span className="text-[14px] text-[#8A8FB9] leading-[16px] mb-[8px]">
                 {p.code}
               </span>
-              <p className="text-[16px] prices text-[#101750] font-bold leading-[20px]">
+              <p className="text-[16px] pb-[24px] prices text-[#101750] font-bold leading-[20px]">
                 {p.price}
               </p>
             </article>

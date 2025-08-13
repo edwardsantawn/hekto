@@ -151,3 +151,27 @@
     flex: 0 0 auto;                   /* ensure horizontal flow */
   }
 }
+
+.carousels {
+  overflow-x: visible;
+  overflow-y: hidden;
+  overscroll-behavior-x:contain;
+  overscroll-behavior-y: auto;
+  touch-action: pan-x pan-y;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  padding-left: 30px;
+  padding-right: 30px;
+  scrollbar-width: none;
+  gap: 32px;
+}
+.carousels::-webkit-scrollbar {
+  display: none;
+}
+@media (min-width: 768px) {
+  .carousels {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+}
