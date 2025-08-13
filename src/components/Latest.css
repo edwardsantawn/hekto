@@ -1,10 +1,8 @@
 @media (max-width: 1440px) {
     .latest {
-        margin-top: 0;
     }
 
     .box {
-        margin:0;
         padding-left: 40px  !important;
         padding-right: 40px  !important;
     }
@@ -37,5 +35,31 @@
 @media (max-width: 350px) {
   .latest-section h2 {
     font-size: 28px ;
+  }
+}
+@media (max-width: 639px) {
+  .latest-img-container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border-radius: 8px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+  }
+  .latest-img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
 }

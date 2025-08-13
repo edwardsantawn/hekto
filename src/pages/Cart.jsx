@@ -29,24 +29,24 @@ export default function Cart() {
   }
 
   return (
-    <section className="w-[1312px] ml-[415px]">
-      <div className="flex max-w-[1089px] my-[104px] justify-between gap-8">
+    <section className="cart-section w-full bg-[#FFF] px-2 sm:px-6 md:px-12 py-[104px]">
+      <div className="cart-main-row flex justify-between flex-col md:flex-row w-full max-w-[1200px] mx-auto gap-8 md:gap-12">
         {/* Cart Items */}
-        <div className="flex-1 max-w-[640px]">
-          <div className="flex w-[640px] flex-col gap-6">
+        <div className="cart-items-col flex-1 w-full md:max-w-[640px]">
+          <div className="flex flex-col gap-6 w-full">
             {cart.map((item, i) => (
               <div
                 key={i}
-                className="flex items-center bg-white rounded-[8px] h-[104px]"
+                className="flex items-center bg-white rounded-[8px] h-[104px] w-full"
               >
-                <img src={item.img} alt={item.name} className="object-contain rounded-l-[8px]" />
-                <div className="flex-1 pl-6">
-                  <div className="font-bold leading-[28px] text-[#101750] text-[22px]">{item.name}</div>
-                  <div className="text-[#101750] leading-[20px] text-[16px]">${item.price.toFixed(2)}</div>
+                <img src={item.img} alt={item.name} className="object-contain rounded-l-[8px] h-full w-[104px] min-w-[72px]" />
+                <div className="flex-1 pl-4 sm:pl-6">
+                  <div className="font-bold name leading-[28px] text-[#101750] text-[18px] sm:text-[18px]">{item.name}</div>
+                  <div className="text-[#101750] price leading-[20px] text-[16px]">${item.price.toFixed(2)}</div>
                 </div>
-                <div className="flex items-center p-[2px] rounded-[8px] border border-[#E5E0FC] justify-between w-[120px] h-[40px]">
+                <div className="flex box items-center p-[2px] rounded-[8px] border border-[#E5E0FC] justify-between w-[90px] sm:w-[100px] h-[40px] mx-2">
                   <button
-                    className="w-8 h-8 rounded  text-[#101750] font-bold"
+                    className="w-8 h-8 rounded text-[#101750] font-bold"
                     onClick={() => {
                       const newCart = [...cart];
                       if (newCart[i].qty > 1) newCart[i].qty -= 1;
@@ -62,10 +62,10 @@ export default function Cart() {
                       newCart[i].qty = Math.max(1, Number(e.target.value));
                       setCart(newCart);
                     }}
-                    className="w-12  rounded text-center"
+                    className="w-10 sm:w-12 rounded text-center"
                   />
                   <button
-                    className="w-8 h-8 rounded  text-[#101750] font-bold"
+                    className="w-8 h-8 rounded text-[#101750] font-bold"
                     onClick={() => {
                       const newCart = [...cart];
                       newCart[i].qty += 1;
@@ -73,7 +73,7 @@ export default function Cart() {
                     }}
                   >+</button>
                 </div>
-                <div className="w-24 text-right w-[51px] font-normal leading-[20px] text-[#101750] text-[16px] ml-[61px] ">
+                <div className="max-w-[51px] number w-full text-right font-normal leading-[20px] text-[#101750] text-[16px] ml-2 sm:ml-[61px]">
                   ${(item.price * item.qty).toFixed(2)}
                 </div>
               </div>
@@ -81,9 +81,8 @@ export default function Cart() {
           </div>
         </div>
         {/* Cart Summary + Clear Cart */}
-        <div className="flex flex-col items-center">
-          {/* Cart Summary */}
-          <div className="w-[350px] bg-[#F8F8FD] rounded-[12px] shadow-[0_8px_24px_rgba(0,0,0,0.05)] p-8 h-fit mt-2 flex flex-col items-center">
+        <div className="cart-summary-col flex flex-col items-center w-full md:w-[350px]">
+          <div className="cart-summary-box w-full bg-[#F8F8FD] rounded-[12px] shadow-[0_8px_24px_rgba(0,0,0,0.05)] p-4 sm:p-8 h-fit mt-2 flex flex-col items-center">
             <div className="w-full mb-6">
               <div className="flex justify-between items-center border-b border-[#E5E0FC] pb-4 mb-4">
                 <span className="font-bold text-[20px] text-[#101750]">Subtotal:</span>
@@ -102,7 +101,6 @@ export default function Cart() {
               Proceed to checkout
             </button>
           </div>
-          {/* Clear Cart button OUTSIDE the summary box but in the flex column */}
           <button
             className="text-[#FB2E86] w-full text-center text-[18px] font-normal mt-8"
             onClick={() => setCart([])}

@@ -14,8 +14,8 @@ const categories = [
 
 export default function Top() {
   return (
-    <section className=" bg-[#FFF] w-full max-w-[1920px] mx-auto wrapper flex flex-col items-center">
-      <h2 className="leading-[52px] mt-[114px] text-[#101750] text-[44px] font-bold tracking-[1.5%] text-center mb-[48px]">
+    <section className=" bg-[#FFF] pt-[114px]  w-full max-w-[1920px] mx-auto wrapper flex flex-col items-center">
+      <h2 className="leading-[52px] text-[#101750] text-[44px] font-bold tracking-[1.5%] text-center mb-[48px]">
         Top Categories
       </h2>
 
@@ -27,19 +27,19 @@ export default function Top() {
         <input type="radio" name="top-carousel" id="top-item-3" className="hidden" />
         <input type="radio" name="top-carousel" id="top-item-4" className="hidden" />
 
-        {/* FIXES:
-            - use w-max so the track never stretches
-            - use gap instead of justify-between so spacing is stable
-            - make items flex-none so they never shrink
-        */}
+        {/* Mobile/tablet: grid; Desktop: carousel track (matches Featured) */}
         <div
           className="
-            carousel-track flex items-center w-max gap-[32px] transition-transform duration-500 ease-in-out mx-auto
-            [&:has(~#top-item-1:checked)]:translate-x-0
-            [&:has(~#top-item-2:checked)]:-translate-x-[304px]
-            [&:has(~#top-item-3:checked)]:-translate-x-[608px]
-            [&:has(~#top-item-4:checked)]:-translate-x-[912px]
+            carousel
+            grid grid-cols-1 sm:grid-cols-2 gap-[64px] sm:gap-6 mt-[72px] overflow-visible
+            md:flex md:w-max md:gap-[32px] md:items-stretch md:mx-auto
+            md:transition-transform md:duration-500 md:ease-in-out
+            md:[&:has(~#top-item-1:checked)]:translate-x-0
+            md:[&:has(~#top-item-2:checked)]:-translate-x-[304px]
+            md:[&:has(~#top-item-3:checked)]:-translate-x-[608px]
+            md:[&:has(~#top-item-4:checked)]:-translate-x-[912px]
           "
+          style={{ willChange: 'transform' }}
         >
           {categories.map((cat, i) => (
             <div className="carousel-item flex-none flex flex-col items-center bg-transparent p-0 m-0" key={i}>
@@ -71,7 +71,7 @@ export default function Top() {
           ))}
         </div>
 
-        {/* dots */}
+        {/* dots (hide on mobile like Featured) */}
         <div className="carousel-nav flex gap-[10px] justify-center mb-[100px] mt-[60px]">
           <input type="radio" name="top-carousel" id="top-item-1" defaultChecked className="hidden peer" />
           <label htmlFor="top-item-1" className="w-[8px] h-[8px] rounded-[100px] border border-[#FB2E86] inline-block cursor-pointer peer-checked:bg-[#FB2E86] bg-[#FFF]" />

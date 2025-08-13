@@ -39,11 +39,11 @@ export default function Latest() {
         {products.map((product, i) => (
           <article
             key={i}
-            className="rounded-[8px] w-full h-[560px] flex flex-col bg-white"
+            className="rounded-[8px] w-full flex flex-col bg-white"
           >
-            <div className="group w-full h-[472px] bg-white hover:bg-[#E5E0FC]
-                            rounded-t-[8px] flex items-center justify-center relative
-                            transition-colors duration-300">
+            <div
+              className="group latest-img-container hover:bg-[#E5E0FC] rounded-t-[8px] relative transition-colors duration-300 mx-auto flex items-center justify-center"
+            >
               {/* Sale badge for Perfume */}
               {product.name === 'Perfume' && (
                 <img src={sale} alt="Sale" className="absolute top-0 -left-[6px] z-20" />
@@ -66,11 +66,11 @@ export default function Latest() {
               <img
                 src={product.img}
                 alt={product.name}
-                className="object-contain w-full h-full max-h-[472px] rounded-[8px]"
+                className="latest-img"
               />
             </div>
             {/* text row */}
-            <div className="w-full flex-1 flex flex-col justify-end rounded-b-[8px] px-4 pb-4">
+            <div className="w-full flex flex-col justify-end rounded-b-[8px] px-4 pb-2 pt-2">
               <div className="flex items-center justify-between">
                 <span className="text-[#101750] text-[16px] leading-[20px]">{product.name}</span>
                 <span className="flex gap-[16px] items-center">

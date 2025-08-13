@@ -1,5 +1,48 @@
-@media (max-width: 700px) {
-  /*.wrapper {
-    transform: scale(1.05);
-  } */ 
+@media (max-width: 1024px) {
+/* .unique {
+  gap: 28px !important;
+ } */
+
+ .right {
+  gap: 20px !important;
+ }
+
+ #root > div > main > section.w-full.bg-\[\#F1F0FF\] > div > div > div.w-full.max-w-\[534px\].right.min-h-\[337px\].flex.flex-col.gap-\[48px\].mx-auto > span {
+  font-size: 24px !important;
+ }
+
+#root > div > main > section.w-full.bg-\[\#F1F0FF\] > div > div > div.w-full.max-w-\[534px\].right.min-h-\[337px\].flex.flex-col.gap-\[48px\].mx-auto > div.flex.flex-col.gap-\[16px\] > div:nth-child(1),
+#root > div > main > section.w-full.bg-\[\#F1F0FF\] > div > div > div.w-full.max-w-\[534px\].right.min-h-\[337px\].flex.flex-col.gap-\[48px\].mx-auto > div.flex.flex-col.gap-\[16px\] > div:nth-child(2) > span.text-\[\#8A8FB9\].font-medium.text-\[16px\].leading-\[132\%\].tracking-\[1\.5\%\],
+#root > div > main > section.w-full.bg-\[\#F1F0FF\] > div > div > div.w-full.max-w-\[534px\].right.min-h-\[337px\].flex.flex-col.gap-\[48px\].mx-auto > div.flex.flex-col.gap-\[16px\] > div:nth-child(3) > span.text-\[\#8A8FB9\].font-medium.text-\[16px\].leading-\[132\%\].tracking-\[1\.5\%\]{
+  font-size: 14px !important;
+ }
+}
+
+@media (max-width: 1200px) {
+  .unique {
+    gap: 24px !important;
+  }
+
+  .right {
+    gap: 24px !important;
+    min-height: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* .right {
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 16px !important;
+  } */
+  #root > div > main > section.w-full.bg-\[\#F1F0FF\] > div > div > div.w-full.max-w-\[534px\].right.min-h-\[337px\].flex.flex-col.gap-\[48px\].mx-auto > span {
+    text-align: center !important;
+  }
+}
+
+@media (max-width: 380px) {
+#root > div > main > section.w-full.bg-\[\#F1F0FF\] > div > div > div.w-full.max-w-\[534px\].right.min-h-\[337px\].flex.flex-col.gap-\[48px\].mx-auto > div.flex.items-center.gap-\[16px\] {
+  display: none
+}
+
 }

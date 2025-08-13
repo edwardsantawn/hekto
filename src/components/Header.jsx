@@ -24,12 +24,12 @@ export default function Header() {
 
         <div className="flex w-full justify-between items-center">
           <button onClick={() => setShowSearch(s => !s)} className="p-0">
-            <img src={search} alt="search" className="w-10 h-10" />
+            <img src={search} alt="search" className="w-8 h-8" />
           </button>
-          <img src={heart} alt="wishlist" className="w-10 h-10" />
-          <img src={user} alt="user" className="w-10 h-10" />
+          <img src={heart} alt="wishlist" className="w-8 h-8" />
+          <img src={user} alt="user" className="w-8 h-8" />
           <button onClick={() => navigate('/cart')} className="p-0">
-            <img src={cart} alt="cart" className="w-10 h-10" />
+            <img src={cart} alt="cart" className="w-8 h-8" />
           </button>
         </div>
 

@@ -5,7 +5,7 @@ export default function Unique() {
   return (
     <section className="w-full bg-[#F1F0FF]">
       <div className="w-full max-w-[1920px] mx-auto">
-        <div className="grid md:grid-cols-2 items-center gap-8 md:gap-12 px-4 md:px-6 py-12">
+        <div className="grid md:grid-cols-2 items-center unique gap-8 md:gap-12 px-[40px] md:px-6 py-12">
 
           {/* Image */}
           <div className="flex-none flex items-center justify-center">
@@ -17,7 +17,7 @@ export default function Unique() {
           </div>
 
           {/* Text block */}
-          <div className="w-full max-w-[534px] min-h-[337px] flex flex-col gap-[48px] mx-auto">
+          <div className="w-full max-w-[534px] right min-h-[337px] flex flex-col gap-[48px] mx-auto">
             <span className="text-[#101750] -mt-[25px] font-bold text-[28px] leading-8 tracking-[1.5%] md:text-[36px] md:leading-[44px]">
               Unique Features Of Latest & Trending Products
             </span>

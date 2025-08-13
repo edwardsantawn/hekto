@@ -2,14 +2,15 @@ import hekto from '../assets/hekto.svg';
 import fb from '../assets/fb.svg';
 import twt from '../assets/twt.svg';
 import ig from '../assets/ig.svg';
+import './Footer.css';
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-[#F6F7FB] pt-[80px]">
+    <footer className="w-full  bg-[#F6F7FB] pt-[80px]">
       {/* top content */}
       <div className="w-full max-w-[1360px] mx-auto px-4 flex flex-col md:flex-row gap-10 md:gap-[111px]">
         {/* Left: logo + subscribe + address */}
-        <div className="md:w-[304px] flex flex-col gap-[32px]">
+        <div className=" flex flex-col gap-[32px]">
           <img src={hekto} alt="Hekto Logo" className="w-[103px] h-[30px]" />
 
           <div className="w-full max-w-[328px]">

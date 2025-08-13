@@ -16,7 +16,7 @@ const blogs = [
 
 export default function Blog() {
   return (
-    <section className="w-full bg-[#FFF] max-w-[1920px] mx-auto h-[799px] wrapper">
+    <section className="w-full bg-[#FFF] max-w-[1920px] mx-auto  wrapper">
       <h2 className="text-[#101750] text-[44px] font-bold leading-[52px] tracking-[1.5%] text-center mb-[72px]">
         Latest Blog
       </h2>

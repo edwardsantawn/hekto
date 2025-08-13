@@ -12,6 +12,10 @@
     margin-left: 24px;
   }
   .track {}
+
+  #root > div > main > section.w-full.featured.max-w-\[1920px\].mx-auto.bg-white.text-center.p-0.m-0 > div > div.flex.mt-\[60px\].justify-center.gap-\[10px\] {
+    display: none !important;
+  }
 }
 
 @media (max-width: 640px) {

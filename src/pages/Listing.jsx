@@ -25,6 +25,7 @@ import star from '../assets/star.svg';
 import gridsvg from '../assets/grid.svg';
 import list from '../assets/list.svg';
 import downArrow from '../assets/down-arrow.svg';
+import './Listing.css';
 
 const products = [
     {
@@ -161,7 +162,7 @@ export default function Listing() {
     }
 
     return (
-        <div className="mx-[304px] ">
+        <div className="max-w-[1312px] w-full mx-auto ">
             <div> 
                 <h2 className="justify-content items-center text-center mb-6 mt-[56px] leading-[64px] w-full h-[52px] text-[#101750] text-[52px] font-bold tracking-[1.5%]  mb-[16px]">
                     Products
@@ -172,9 +173,9 @@ export default function Listing() {
                     <span className="text-[16px] text-[#FB2E86] leading-[20px] font-normal">Products</span>
                 </span>
             </div>
-            <div className="flex items-center w-full h-[40px] mb-6 items-center justify-end">
-                <div className="flex items-center gap-[64px] w-[694px] h-[40px] ">
-                    <div className='w-[174px] gap-[16px] h-[40px] flex items-center '>
+            <div className="flex items-center w-full h-full max-h-[40px] mb-6 items-center justify-end">
+                <div className="flex items-center gap-[64px] w-full bar max-w-[694px] h-[40px] ">
+                    <div className='w-[174px] one gap-[16px] h-[40px] flex items-center '>
                         <span className="text-[#8A8FB9] text-[16px] flex items-center h-full whitespace-nowrap">Per Page</span>
                         <div className='border border-[#E5E0FC] gap-[16px] flex flex-row border rounded-[8px] w-[96px] pl-[16px] pr-[2px] pt-[2px] pb-[2px] h-[40px] text-[#101750]'>
                             <select className="text-[#101750] font-normal leading-[16px] text-[14px] appearance-none w-full">
@@ -185,12 +186,12 @@ export default function Listing() {
                             <img src={downArrow} alt="Down Arrow" className="" />
                         </div>
                     </div>
-                    <div className="flex items-center gap-[16px] justify-between w-[276px] h-[40px]">
+                    <div className="flex items-center sort  justify-between w-full max-w-[276px] h-[40px]" id='sort'>
                         <span className="text-[#8A8FB9] font-normal text-[16px] leading-[20px] flex items-center whitespace-nowrap">
                             Sort By
                         </span>
-                        <div className="flex border border-[#E5E0FC] rounded-[8px] items-center gap-[16px]">
-                            <select className="rounded-[8px] h-[40px] w-[208px] pl-[16px] pr-[2px] pt-[2px] pb-[2px] font-normal text-[#101750] text-[14px] leading-[16px] appearance-none">
+                        <div className="flex drop border border-[#E5E0FC] rounded-[8px] items-center gap-[16px]">
+                            <select className="rounded-[8px] h-[40px] w-full max-w-[208px] pl-[16px] pr-[2px] pt-[2px] pb-[2px] font-normal text-[#101750] text-[14px] leading-[16px] appearance-none">
                                 <option>Price High - Low</option>
                                 <option>Price Low - High</option>
                                 <option>Name A-Z</option>
@@ -198,7 +199,7 @@ export default function Listing() {
                             <img src={downArrow} alt="Down Arrow" className="" />
                         </div>
                     </div>
-                    <div className="flex items-center gap-[16px] w-[116px] h-[24px]">
+                    <div className="flex items-center gap-[16px] view w-[116px] h-[24px]">
                         {/* Grid Button */}
 
                         <span className='text-[16px] font-normal w-[36px] h-[20px] text-[#8A8FB9] leading-[20px] '>
@@ -235,9 +236,9 @@ export default function Listing() {
                 </div>
 
             </div>
-            <section className="flex flex-row items-start w-full max-w-[1902px] mb-[100px] mt-[32px]">
+            <section className="flex justify-between flex-row items-start w-full max-w-[1902px] mb-[100px] mt-[32px]">
                 {/* Sidebar */}
-                <aside className="w-[164px] h-[1303px] mr-[172px]">
+                <aside className="max-w-[164px] side w-full h-[1303px] mr-[172px]">
                     {/* Product Brand */}
                     <div className="mb-[48px]">
                         <div className="mb-[23px]">
@@ -397,11 +398,14 @@ export default function Listing() {
                 <div className="flex-1">
                     {/* Product List/Grid */}
                     {view === 'grid' ? (
-                        <div className="grid grid-cols-3 gap-8 w-[976px]">
+                        <div
+                            className="grid grid-cols-3 gap-8 w-full justify-end max-w-[976px]"
+                            style={{ justifyItems: 'end' }}
+                        >
                             {products.map((product, i) => (
                                 <div
                                     key={i}
-                                    className="rounded-[8px] w-[304px] h-[448px] bg-white flex flex-col items-center transition-shadow cursor-pointer"
+                                    className="rounded-[8px] another w-full max-w-[304px] h-[448px] bg-white flex flex-col items-center transition-shadow cursor-pointer"
                                     style={{
                                         boxShadow: '8px 24px 32px -16px #10175026'
                                     }}
@@ -412,10 +416,10 @@ export default function Listing() {
                                     <img
                                         src={product.img}
                                         alt={product.name}
-										className="pr-[8px] rounded-[4px] pl-[8px] pt-[8px] "
+										className="pr-[8px] max-w-[288px] w-full max-h-[200px] h-full rounded-[4px] pl-[8px] pt-[8px] "
                                     />
-                                    <div className="w-full px-4 py-4 h-[160px] flex flex-col items-start">
-                                        <span className="text-[#101750] font-bold text-[16px] leading-[20px]">
+                                    <div className="w-full info px-4 py-4 h-[160px] flex flex-col items-start">
+                                        <span className="text-[#101750] name font-bold text-[16px] leading-[20px]">
                                             {product.name}
                                         </span>
                                         <div className="flex mb-[8px] mt-[8px] gap-2">
@@ -449,7 +453,7 @@ export default function Listing() {
                                         </span>
                                     </div>
                                     {/* Action icons at the bottom */}
-                                    <div className="flex items-center w-[144px] pl-[16px] h-[32px] gap-[24px] mt-[16px] mb-4 ml-0 self-start">
+                                    <div className="flex extra items-center w-[144px] pl-[16px] h-[32px] gap-[24px] mt-[16px] mb-4 ml-0 self-start">
                                         <img src={cart} alt="cart" className="p-2" />
                                         <img src={heart} alt="heart" className="p-2" />
                                         <img src={search} alt="search" className="p-2" />
@@ -458,7 +462,7 @@ export default function Listing() {
                             ))}
                         </div>
                     ) : (
-                        <div className="flex flex-col w-[976px] gap-8">
+                        <div className="flex flex-col w-full max-w-[976px] gap-8">
                             {products.map((product, i) => (
                                 <div
                                     key={i}
@@ -471,7 +475,7 @@ export default function Listing() {
                                     onMouseLeave={e => e.currentTarget.style.boxShadow = '8px 24px 32px -16px #10175026'}
                                     onClick={() => navigate('/details', { state: { product } })}
                                 >
-                                    <div className="group w-[288px] h-[200px] bg-white hover:bg-[#E5E0FC] rounded-[8px] flex items-center justify-center relative transition-colors duration-300 mr-6">
+                                    <div className="group w-full max-w-[288px] h-[200px] bg-white hover:bg-[#E5E0FC] rounded-[8px] flex items-center justify-center relative transition-colors duration-300 mr-6">
                                         {/* Sale badge for Perfume */}
                                         {product.name === 'Perfume' && (
                                             <img

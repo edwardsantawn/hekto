@@ -4,7 +4,7 @@ import './Discount.css';
 
 export default function Discount() {
   return (
-    <section className="w-full bg-[#FFF] max-w-[1920px] mx-auto wrapper flex flex- h-[894px] items-center">
+    <section className="w-full bg-[#FFF] max-w-[1920px] mx-auto wrapper flex flex-col items-center">
       <h2 className="leading-[52px] above mt-[114px] text-[#101750] text-[44px] font-bold tracking-[1.5%] text-center mb-[24px]">
         Discount Item
       </h2>
@@ -16,7 +16,7 @@ export default function Discount() {
       </div>
 
       {/* fluid inner container */}
-      <div className="w-full max-w-[1310px] min-h-[568px] mx-auto px-4 grid md:grid-cols-2 items-center gap-8 mb-[100px]">
+      <div className="w-full max-w-[1310px] h-full max-h-[568px] discount mx-auto px-4 grid md:grid-cols-2 items-center gap-8 mb-[100px]">
         {/* Left */}
         <div className="w-full max-w-[534px] min-h-[337px] flex flex-col gap-[24px] mx-auto">
           <span className="text-[#101750] -mt-[25px] font-bold text-[36px] leading-[44px] tracking-[1.5%]">
@@ -75,7 +75,7 @@ export default function Discount() {
         </div>
 
         {/* Right */}
-        <div className="flex-none flex items-center justify-center min-h-[337px]">
+        <div className="flex-none headphone flex items-center justify-center min-h-[337px]">
           <img
             src={airpods}
             alt="Airpods"

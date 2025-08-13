@@ -1,9 +1,10 @@
 import subscribe from '../assets/subscribe.svg';
+import '../components/Subscribe.css'; 
 
 export default function Subscribe() {
   return (
     <section
-      className="w-full max-w-[1920px] mx-auto bg-no-repeat bg-center bg-cover min-h-[432px] flex items-center justify-center px-4"
+      className="w-full sub max-w-[1920px] mx-auto bg-no-repeat bg-center bg-cover  flex items-center justify-center px-4"
       style={{ backgroundImage: `url(${subscribe})` }}
     >
       <div className="w-full max-w-[768px] min-h-[208px] flex flex-col items-center justify-center gap-6 md:gap-[60px] text-center">
