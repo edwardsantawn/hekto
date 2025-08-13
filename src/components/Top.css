@@ -7,7 +7,8 @@
 /* Make Top’s carousel mimic Featured’s responsive behavior */
 @media (max-width: 1440px) {
   .carousel { 
-    margin-left: 40px; /* same nudge as Featured */
+    margin-left: 40px;
+    margin-right: 40px;
   }
 }
 
@@ -41,5 +42,80 @@
   #root > div > main > section.bg-\[\#FFF\].pt-\[114px\].w-full.max-w-\[1920px\].mx-auto.wrapper.flex.flex-col.items-center {
     padding-top: 350px !important; 
     padding-bottom: 100px !important; /* remove bottom padding */
+  }
+}
+
+/* ---- Top carousel: match Featured behavior & spacing ---- */
+
+/* keep the wrapper as the scope target for :has() */
+.carousel-wrapper { position: relative; }
+
+/* center the track on md+ exactly like Featured */
+@media (min-width: 768px) {
+  .carousel {
+    margin-left: auto;
+    margin-right: auto;
+    transition: transform .5s ease-in-out; /* smooth slide */
+  }
+}
+
+/* grid spacing on small screens (same feel as Featured) */
+.carousel {
+  /* already have gap via Tailwind classes; ensure no overflow clips hover */
+  overflow: visible;
+}
+
+/* Default: center carousel with auto margins */
+.carousel {
+  margin-left: auto;
+  margin-right: auto;
+  overflow: visible;
+}
+
+/* At 1440px and below: 40px horizontal margin */
+@media (max-width: 1440px) {
+  .carousel {
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+}
+
+/* At 500px and below: 20px horizontal margin */
+@media (max-width: 500px) {
+  .carousel {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+
+/* ---- Dots (small pink circles) ---- */
+.carousel-nav { gap: 18px; }
+
+/* base dot */
+.dot {
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+  border-radius: 9999px;
+  border: 1px solid #FB2E86;
+  background: #FFF;            /* inactive */
+  cursor: pointer;
+  transition: width .25s ease, height .25s ease, background-color .25s ease, transform .25s ease;
+}
+
+/* active dot (fills and nudges larger) — mirrors Featured's active state idea */
+.carousel-wrapper:has(#top-item-1:checked) label[for="top-item-1"],
+.carousel-wrapper:has(#top-item-2:checked) label[for="top-item-2"],
+.carousel-wrapper:has(#top-item-3:checked) label[for="top-item-3"] {
+  background: #FB2E86;
+  transform: scale(1.15);
+}
+
+/* optional: hide dots on smaller screens like Featured's compact view */
+@media (max-width: 768px) {
+  .carousel-nav { display: none !important; }
+    .carousel {
+    margin-left: 24px;
+    margin-right: 24px;
   }
 }

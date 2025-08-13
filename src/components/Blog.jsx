@@ -36,10 +36,10 @@ export default function Blog() {
               <img
                 src={b.img}
                 alt={b.title}
-                className="w-full h-[290px] object-cover"
+                className="w-full h-[255px] object-cover"
               />
 
-              <div className="flex items-center justify-between px-[24px] py-[16px]">
+              <div className="flex items-center justify-between px-[24px] pb-[24px] pt-[16px]">
                 <span className="text-[#8A8FB9] text-[14px] font-normal gap-[8px] flex flex-row leading-[16px]">
                   <img src={pen} alt="pen" />
                   {b.author}
@@ -52,14 +52,14 @@ export default function Blog() {
 
               {/* content grows to fill remaining height so cards align */}
               <div className="px-[24px] pb-[20px] flex-1 flex flex-col">
-                <h3 className="text-[#151875] text-[18px] font-bold leading-[24px] mb-[12px]
+                <h3 className="text-[#151875] text-[18px] font-bold leading-[24px] pb-[16px]
                                transition-colors duration-300 group-hover:text-[#FB2E86]">
                   {b.title}
                 </h3>
-                <p className="text-[#8A8FB9] text-[14px] font-normal leading-[22px] mb-[20px]">
+                <p className="text-[#8A8FB9] text-[14px] font-normal leading-[22px] pb-[32px]">
                   {b.description}
                 </p>
-                <a href="#" className="mt-auto text-[#FB2E86] text-[14px] font-bold leading-[16px] hover:underline">
+                <a href="#" className="pt-auto text-[#FB2E86] text-[14px] font-bold leading-[16px] hover:underline">
                   Read More
                 </a>
               </div>
