@@ -25,7 +25,7 @@ export default function Featured() {
       <div
         className="
           relative w-full max-w-[1312px] mx-auto px-4 overflow-visible track
-          [&:has(#item-1:checked)_label[for='item-1']]:bg-[#FB2E86]
+          [&:has(#item-1:checked)_label[for='item-1']]:bg-[#FB2E86] h-full max-h-[472px]
           [&:has(#item-2:checked)_label[for='item-2']]:bg-[#FB2E86]
           [&:has(#item-3:checked)_label[for='item-3']]:bg-[#FB2E86]
           [&:has(#item-4:checked)_label[for='item-4']]:bg-[#FB2E86]
@@ -34,7 +34,7 @@ export default function Featured() {
         {/* Mobile/tablet: grid; Desktop: carousel track */}
         <div
           className="
-            carousels flex gap-[32px] overflow-x-auto overflow-y-hidden
+            carousels h-[472px] flex gap-[32px] overflow-x-auto overflow-y-hidden
             overscroll-x-contain touch-pan-x px-[30px] md:px-[60px] scrollbar-hide
             mt-[72px]
           "
@@ -50,7 +50,7 @@ export default function Featured() {
                 w-[280px] md:w-[304px] bg-white rounded-[12px] item
                 shadow-[0_8px_24px_rgba(0,0,0,0.05)]
                 flex flex-col items-center flex-shrink-0
-                min-h-[368px] h-full
+                max-h-[368px] h-full
                 transition-shadow transform duration-300 group
                 hover:shadow-[8px_64px_80px_-16px_rgba(16,23,80,0.15)] hover:-translate-y-2
               "
@@ -107,7 +107,7 @@ export default function Featured() {
         <input type="radio" name="carousel" id="item-4" className="hidden" />
 
         {/* Dots: always 60px below the carousel */}
-        <div className="flex mt-[60px] justify-center gap-[10px]">
+        <div className="flex  justify-center pt-[60px] gap-[10px]">
           <label htmlFor="item-1" className="w-[16px] h-[4px] rounded-[10px] bg-[#FEBAD7] cursor-pointer" />
           <label htmlFor="item-2" className="w-[16px] h-[4px] rounded-[10px] bg-[#FEBAD7] cursor-pointer" />
           <label htmlFor="item-3" className="w-[16px] h-[4px] rounded-[10px] bg-[#FEBAD7] cursor-pointer" />

@@ -1,3 +1,65 @@
+/* --- Base carousel styles: Desktop (flex row, scrollable) --- */
+.carousels {
+  overflow-x: visible;
+  overflow-y: hidden;
+  overscroll-behavior-x: contain;
+  overscroll-behavior-y: auto;
+  touch-action: pan-x pan-y;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  padding-left: 30px;
+  padding-right: 30px;
+  scrollbar-width: none;
+  gap: 32px;
+}
+.carousels::-webkit-scrollbar {
+  display: none;
+}
+
+/* --- Responsive padding for shadows --- */
+@media (min-width: 768px) {
+  .carousels {
+    padding-left: 60px;
+    padding-right: 60px;
+    height: 100%;
+  }
+
+  #root > div > main > section.w-full.featured.max-w-\[1920px\].mx-auto.bg-white.text-center.p-0.m-0 > div {
+    max-height: 100%;
+  }
+  .carousel-dots {
+    display: none;
+  }
+  .price {
+    padding-bottom: 20px !important;
+  }
+#root > div > main > section:nth-child(5){
+    padding-bottom: 40px !important;
+  }
+}
+
+/* --- Mobile/tablet: grid layout, centered --- */
+@media (max-width: 768px) {
+  .carousels {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    justify-items: center;
+    align-items: stretch;
+    overflow-x: unset;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .item {
+    width: 100% !important;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* --- Your requested media queries, preserved and working --- */
 @media (max-width: 1440px) {
   .carousels { 
     margin-left: auto;
@@ -19,23 +81,19 @@
   #root > div > main > section.w-full.featured.max-w-\[1920px\].mx-auto.bg-white.text-center.p-0.m-0 > div > div.flex.mt-\[60px\].justify-center.gap-\[10px\] {
     display: none !important;
   }
-  /* Animate dot width */
-.track label[for^="item-"] {
-  transition: width .25s ease;
-}
-
-/* When a slide is active, make its dot 24px wide */
-.track:has(#item-1:checked) label[for="item-1"],
-.track:has(#item-2:checked) label[for="item-2"],
-.track:has(#item-3:checked) label[for="item-3"],
-.track:has(#item-4:checked) label[for="item-4"] {
-  width: 24px;
-}
- .prices {
+  .track label[for^="item-"] {
+    transition: width .25s ease;
+  }
+  .track:has(#item-1:checked) label[for="item-1"],
+  .track:has(#item-2:checked) label[for="item-2"],
+  .track:has(#item-3:checked) label[for="item-3"],
+  .track:has(#item-4:checked) label[for="item-4"] {
+    width: 24px;
+  }
+  .prices {
     padding-bottom: 20px !important;
   }
-
- }
+}
 
 
 @media (max-width: 640px) {
@@ -47,13 +105,14 @@
   }
 }
 
+
 @media (max-width: 560px) {
   .item {
-    /* gap: 10px; */
     max-height: 330px;
     width: 100%;
   }
 }
+
 
 @media (max-width: 500px) {
   .item {
@@ -72,10 +131,11 @@
     font-size: 36px ;
     line-height: 40px;
   }
-    .track {
+  .track {
     padding: 0 20px ;
   }
 }
+
 
 @media (max-width: 430px) {
   .carousel {
@@ -85,28 +145,30 @@
     grid-template-columns: 1fr !important;
   }
 
-    .featured h2 {
+  .featured h2 {
     font-size: 32px ;
   }
 
-    .item {
+  .item {
     max-height: 450px ;
     width: 100%;
     min-height: 450px;
   }
 }
 
+
 @media (max-width: 350px) {
   .featured h2 {
     font-size: 28px ;
   }
-    .item {
+  .item {
     max-height: 380px;
     width: 100%;
     gap: 10px;
     min-height: 380px;
   }
 }
+
 
 @media (max-width: 400px)  {
   .item {
@@ -120,8 +182,6 @@
 .track label[for^="item-"] {
   transition: width .25s ease;
 }
-
-/* When a slide is active, make its dot 24px wide */
 .track:has(#item-1:checked) label[for="item-1"],
 .track:has(#item-2:checked) label[for="item-2"],
 .track:has(#item-3:checked) label[for="item-3"],
@@ -131,47 +191,20 @@
 
 /* Enable horizontal swipe/scroll on the Featured carousel (md+) */
 @media (min-width: 768px) {
-  /* Make the outer container scrollable */
   .rectangle {
-    overflow-x: auto;                 /* allow swipe/drag scroll */
+    overflow-x: auto;
     overflow-y: visible;
     -webkit-overflow-scrolling: touch;
     overscroll-behavior-x: contain;
-    scroll-snap-type: x mandatory;    /* clean snapping */
-    scrollbar-width: none;            /* Firefox hide scrollbar */
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
   }
-  .rectangle::-webkit-scrollbar {         /* WebKit hide scrollbar */
+  .rectangle::-webkit-scrollbar {
     display: none;
   }
-
-  /* Snap each card cleanly without altering its size/margins */
   .item {
     scroll-snap-align: start;
     scroll-snap-stop: always;
-    flex: 0 0 auto;                   /* ensure horizontal flow */
-  }
-}
-
-.carousels {
-  overflow-x: visible;
-  overflow-y: hidden;
-  overscroll-behavior-x:contain;
-  overscroll-behavior-y: auto;
-  touch-action: pan-x pan-y;
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
-  padding-left: 30px;
-  padding-right: 30px;
-  scrollbar-width: none;
-  gap: 32px;
-}
-.carousels::-webkit-scrollbar {
-  display: none;
-}
-@media (min-width: 768px) {
-  .carousels {
-    padding-left: 60px;
-    padding-right: 60px;
+    flex: 0 0 auto;
   }
 }
