@@ -7,12 +7,16 @@ import heart from '../assets/heart.svg';
 import cart from '../assets/cart.svg';
 import hekto from '../assets/hekto.svg';
 import search from '../assets/search.svg';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import './Header.css';
 
 export default function Header() {
   const [showSearch, setShowSearch] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
+
+  // Helper to check if a nav item is active
+  const isActive = (path) => location.pathname === path;
 
   return (
     <header className="bg-white w-full">
@@ -98,14 +102,40 @@ export default function Header() {
           {/* Nav */}
           <nav className="flex items-center justify-start ml-20">
             <ul className="flex items-center gap-8 text-[16px] leading-5">
-              <li className="cursor-default">Home</li>
+              <li
+                className={`cursor-pointer transition ${
+                  isActive('/') ? 'text-[#FB2E86] font-bold' : ''
+                }`}
+                onClick={() => navigate('/')}
+              >
+                Home
+              </li>
               <li>
-                <Link to="/listing" className="hover:text-[#FB2E86] transition">
+                <Link
+                  to="/listing"
+                  className={`hover:text-[#FB2E86] transition ${
+                    isActive('/listing') ? 'text-[#FB2E86] font-bold' : ''
+                  }`}
+                >
                   Product
                 </Link>
               </li>
-              <li className="cursor-default">Blog</li>
-              <li className="cursor-default">Contact</li>
+              <li
+                className={`cursor-pointer transition ${
+                  isActive('/blog') ? 'text-[#FB2E86] font-bold' : ''
+                }`}
+                onClick={() => navigate('/blog')}
+              >
+                Blog
+              </li>
+              <li
+                className={`cursor-pointer transition ${
+                  isActive('/contact') ? 'text-[#FB2E86] font-bold' : ''
+                }`}
+                onClick={() => navigate('/contact')}
+              >
+                Contact
+              </li>
             </ul>
           </nav>
           {/* Search */}

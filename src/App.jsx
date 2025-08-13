@@ -20,7 +20,7 @@ function App() {
   return (
     <BrowserRouter>
       {/* Fluid, centered, real height context */}
-<div className="wrapper max-w-[1920px] w-full h-full flex flex-col overflow-x-clip font-josefin-sans">
+<div className="wrapper mx-auto max-w-[1920px] w-full h-full flex flex-col overflow-x-clip font-josefin-sans">
         <Header />
 
         {/* This area grows so footer stays at the bottom */}

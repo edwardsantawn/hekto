@@ -23,7 +23,9 @@ import unchecked3 from '../assets/unchecked3.svg';
 import goldstar from '../assets/goldstar.svg';
 import star from '../assets/star.svg';
 import gridsvg from '../assets/grid.svg';
+import gridpink from '../assets/gridpink.svg'; // Add this import
 import list from '../assets/list.svg';
+import listpink from '../assets/listpink.svg'; // Add this import
 import downArrow from '../assets/down-arrow.svg';
 import './Listing.css';
 
@@ -164,11 +166,13 @@ export default function Listing() {
     return (
         <div className="max-w-[1312px] w-full mx-auto ">
             <div> 
-                <h2 className="justify-content items-center text-center mb-6 mt-[56px] leading-[64px] w-full h-[52px] text-[#101750] text-[52px] font-bold tracking-[1.5%]  mb-[16px]">
+                <h2 className="justify-content items-center text-center mb-6 mt-[56px] leading-[64px] w-full h-[52px] text-[#101750] text-[52px] font-bold tracking-[1.5%]  mb-[32px]">
                     Products
                 </h2>
                 <span className="flex text-center gap-2 justify-center mb-[80px] items-center">
-                    <span className="text-[16px] text-[#8A8FB9] leading-[20px] font-normal">Home</span>
+                    <span className="text-[16px] text-[#8A8FB9] leading-[20px] font-normal cursor-pointer hover:text-[#FB2E86] transition" onClick={() => navigate('/')}>
+                      Home
+                    </span>
                     <span className="inline-block w-1 h-1 rounded-full bg-[#D9D9D9]"></span>
                     <span className="text-[16px] text-[#FB2E86] leading-[20px] font-normal">Products</span>
                 </span>
@@ -200,36 +204,29 @@ export default function Listing() {
                         </div>
                     </div>
                     <div className="flex items-center gap-[16px] view w-[116px] h-[24px]">
-                        {/* Grid Button */}
-
                         <span className='text-[16px] font-normal w-[36px] h-[20px] text-[#8A8FB9] leading-[20px] '>
                             View
                         </span>
                         <button
-                            className={`w-6 h-6 flex items-center justify-center  rounded transition-colors
-                            
-                            `}
+                            className={`w-6 h-6 flex items-center justify-center rounded transition-colors`}
                             onClick={() => setView('grid')}
                             aria-label="Grid View"
                         >
                             <img
-                                src={gridsvg}
+                                src={view === 'grid' ? gridpink : gridsvg}
                                 alt="Grid View"
-
+                                className="w-6 h-6"
                             />
                         </button>
-                        {/* List Button */}
                         <button
-                            className={`w-6 h-6 flex items-center justify-center  rounded transition-colors
-                            `}
+                            className={`w-6 h-6 flex items-center justify-center rounded transition-colors`}
                             onClick={() => setView('list')}
                             aria-label="List View"
                         >
                             <img
-                                src={list}
+                                src={view === 'list' ? listpink : list}
                                 alt="List View"
                                 className="w-6 h-6"
-
                             />
                         </button>
                     </div>
@@ -399,8 +396,8 @@ export default function Listing() {
                     {/* Product List/Grid */}
                     {view === 'grid' ? (
                         <div
-                            className="grid grid-cols-3 gap-8 w-full justify-end max-w-[976px]"
-                            style={{ justifyItems: 'end' }}
+                            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full max-w-full"
+                            style={{ justifyItems: 'center' }}
                         >
                             {products.map((product, i) => (
                                 <div
@@ -413,11 +410,21 @@ export default function Listing() {
                                     onMouseLeave={e => e.currentTarget.style.boxShadow = '8px 24px 32px -16px #10175026'}
                                     onClick={() => navigate('/details', { state: { product } })}
                                 >
-                                    <img
-                                        src={product.img}
-                                        alt={product.name}
-										className="pr-[8px] max-w-[288px] w-full max-h-[200px] h-full rounded-[4px] pl-[8px] pt-[8px] "
-                                    />
+                                    <div className="group w-full max-w-[288px] min-w-[120px] h-[200px] bg-white rounded-[8px] flex items-center justify-center relative transition-colors duration-300">
+                                        {/* Sale badge for Perfume */}
+                                        {product.name === 'Perfume' && (
+                                            <img
+                                                src={sale}
+                                                alt="Sale"
+                                                className="absolute top-[0px] left-[-6.21px] z-20"
+                                            />
+                                        )}
+                                        <img
+                                            src={product.img}
+                                            alt={product.name}
+                                            className="w-full max-w-[288px] h-[200px] rounded-[4px] pl-[8px] pr-[8px] pt-[8px] object-contain"
+                                        />
+                                    </div>
                                     <div className="w-full info px-4 py-4 h-[160px] flex flex-col items-start">
                                         <span className="text-[#101750] name font-bold text-[16px] leading-[20px]">
                                             {product.name}
@@ -466,7 +473,7 @@ export default function Listing() {
                             {products.map((product, i) => (
                                 <div
                                     key={i}
-                                    className="rounded-[8px] bg-white flex flex-row items-center shadow transition-shadow p-[16px] cursor-pointer"
+                                    className="rounded-[8px] horizontal bg-white flex flex-row items-center shadow transition-shadow p-[16px] cursor-pointer"
                                     style={{
                                         maxHeight: 232,
                                         height: '100%',
@@ -476,27 +483,19 @@ export default function Listing() {
                                     onMouseLeave={e => e.currentTarget.style.boxShadow = '8px 24px 32px -16px #10175026'}
                                     onClick={() => navigate('/details', { state: { product } })}
                                 >
-                                    <div className="group w-full max-w-[288px] h-[200px] bg-white hover:bg-[#E5E0FC] rounded-[8px] flex items-center justify-center relative transition-colors duration-300 mr-6">
-                                        {/* Sale badge for Perfume */}
-                                        {product.name === 'Perfume' && (
-                                            <img
-                                                src={sale}
-                                                alt="Sale"
-                                                className="absolute top-[0px] left-[-6.21px] z-20"
-                                            />
-                                        )}
+                                    <div className="group flex-none image-box w-[288px] h-[200px] bg-white rounded-[8px] flex items-center justify-center relative transition-colors duration-300 mr-6">
                                         <img
                                             src={product.img}
                                             alt={product.name}
-                                            className="h-[200px] w-[288px] object-contain"
+                                            className="w-[288px] image h-[200px] object-contain rounded-[4px] p-2"
                                         />
                                     </div>
                                     <div className="flex-1 w-full max-w-[616px] h-[105px] flex flex-col justify-center">
-                                        <div className="flex items-center w-full mb-1">
+                                        <div className="flex stars items-center w-full mb-1">
                                             <span className="text-[#101750] font-bold text-[20px] h-[24px] mb-[8px] leading-[24px]">
                                                 {product.name}
                                             </span>
-                                            <span className="flex gap-1 ml-auto">
+                                            <span className="flex gap-1 rate ml-auto">
                                                 {[...Array(5)].map((_, i) => (
                                                     <img
                                                         key={i}
@@ -507,7 +506,7 @@ export default function Listing() {
                                                 ))}
                                             </span>
                                         </div>
-                                        <span className="flex gap-[8px] mb-[11px] h-[20px] items-center mb-1">
+                                        <span className="flex price gap-[8px] mb-[11px] h-[20px] items-center mb-1">
                                             <span
                                                 className={
                                                     product.sale && product.sale !== product.price
@@ -523,10 +522,10 @@ export default function Listing() {
                                                 </span>
                                             )}
                                         </span>
-                                        <span className="text-[#8A8FB9] w-[616px] h-[42px] text-[14px] leading-[18px]">
+                                        <span className="text-[#8A8FB9] w-full max-w-[616px] lorem h-[42px] text-[14px] leading-[18px]">
                                             {product.desc}
                                         </span>
-                                        <div className="flex gap-[24px] mt-[37px]">
+                                        <div className="flex options gap-[24px] mt-[37px]">
                                             <button className="flex items-center justify-center w-[32px] h-[32px]  rounded-none bg-white hover:bg-[#F6F7FB] transition">
                                                 <img src={cart} alt="cart" className="" />
                                             </button>
