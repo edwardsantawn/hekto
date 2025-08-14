@@ -19,7 +19,7 @@ export default function Discount() {
       <div className="w-full max-w-[1310px] items-center justify-center h-full max-h-[568px] discount mx-auto px-4 grid md:grid-cols-2 items-center gap-8 ">
         {/* Left */}
         <div className="w-full max-w-[640px] h-full max-h-[341px] flex flex-col gap-[24px] mx-auto">
-          <span className="text-[#101750] -mt-[25px] font-bold text-[36px] leading-[44px] tracking-[1.5%]">
+          <span className="text-[#101750] first mt-[25px] font-bold text-[36px] leading-[44px] tracking-[1.5%]">
             20% Discount Of All Products
           </span>
           <span className="text-[#FB2E86] font-bold text-[22px] leading-[28px] ">
