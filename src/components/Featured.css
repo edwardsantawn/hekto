@@ -32,7 +32,7 @@
 #root > div > main > section.w-full.featured.max-w-\[1920px\].mx-auto.bg-white.text-center.p-0.m-0 > div > div.flex.justify-center.pt-\[60px\].gap-\[10px\] {
     display: none !important;
   }
-  .prices {
+  .price {
     padding-bottom: 20px !important;
   }
 #root > div > main > section:nth-child(5){
@@ -62,11 +62,6 @@
 }
 
 
-@media (max-width: 640px) {
-  .carousels {
-    grid-template-columns: 1fr;
-  }
-}
 
 /* --- Single column for small screens --- */
 @media (max-width: 500px) {
@@ -114,7 +109,7 @@
 
 
 @media (max-width: 640px) {
-  .prices {
+  .price {
     padding-bottom: 20px;
   }
   .item {

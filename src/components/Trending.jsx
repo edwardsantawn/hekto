@@ -37,7 +37,7 @@ export default function Trending() {
               {p.name}
             </span>
 
-            <div className="flex price items-center gap-[15px]">
+            <div className="flex trending-price  items-center gap-[15px]">
               <span className="text-[#101750] text-[16px] leading-[20px] group-hover:text-[#FB2E86]">
                 {p.price}
               </span>

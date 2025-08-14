@@ -33,7 +33,7 @@
     margin-bottom: 32px;
     display: block;
   }
- .price{
+ .trending-price{
     padding-bottom: 20px !important;
   }
 }
@@ -45,6 +45,12 @@
   }
   h2.trending-title {
     font-size: 36px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .trending-price {
+    padding-bottom: 20px !important;
   }
 }
 
