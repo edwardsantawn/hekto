@@ -34,7 +34,7 @@ export default function Featured() {
         {/* Mobile/tablet: grid; Desktop: carousel track */}
         <div
           className="
-            carousels h-[472px] flex gap-[32px] overflow-x-auto overflow-y-hidden
+            carousels h-[400px] flex gap-[32px] overflow-x-auto overflow-y-hidden
             overscroll-x-contain touch-pan-x px-[30px] md:px-[60px] scrollbar-hide
             mt-[72px]
           "
@@ -107,7 +107,7 @@ export default function Featured() {
         <input type="radio" name="carousel" id="item-4" className="hidden" />
 
         {/* Dots: always 60px below the carousel */}
-        <div className="flex  justify-center pt-[60px] gap-[10px]">
+        <div className="flex  justify-center pt-[25px]  gap-[10px]">
           <label htmlFor="item-1" className="w-[16px] h-[4px] rounded-[10px] bg-[#FEBAD7] cursor-pointer" />
           <label htmlFor="item-2" className="w-[16px] h-[4px] rounded-[10px] bg-[#FEBAD7] cursor-pointer" />
           <label htmlFor="item-3" className="w-[16px] h-[4px] rounded-[10px] bg-[#FEBAD7] cursor-pointer" />

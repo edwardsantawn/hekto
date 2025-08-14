@@ -16,12 +16,12 @@ export default function Unique() {
           </div>
 
           {/* Text block */}
-          <div className="w-full max-w-[534px] right min-h-[337px] flex flex-col gap-[48px] mx-auto md:mx-0">
+          <div className="w-full max-w-[534px] right h-full max-h-[337px] flex flex-col gap-[48px] mx-auto md:mx-0">
             <span className="text-[#101750] font-bold text-[28px] leading-8 tracking-[1.5%] md:text-[36px] md:leading-[44px] text-left">
               Unique Features Of Latest & Trending Products
             </span>
 
-            <div className="flex flex-col gap-[33px]">
+            <div className="flex flex-col gap-[16px]">
               <div className="flex items-center gap-[16px]">
                 <span className="w-[11px] h-[11px] rounded-full bg-[#FB2E86] inline-block" />
                 <span className="text-[#8A8FB9] font-medium text-[16px] leading-[132%] tracking-[1.5%]">

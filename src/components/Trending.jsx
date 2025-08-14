@@ -23,14 +23,14 @@ export default function Trending() {
         {products.map((p, i) => (
           <article
             key={i}
-            className="group trending-item bg-white rounded-[8px] flex flex-col items-center min-h-[340px] shadow-md
+            className="group trending-item bg-white rounded-[8px] flex flex-col items-center h-[344px] shadow-md
                        transition-all duration-300 hover:shadow-[8px_64px_80px_-16px_rgba(16,23,80,0.15)] hover:-translate-y-2"
           >
             {/* don't let image shrink */}
             <img
               src={p.img}
               alt={p.name}
-              className="trending-img mb-[32px] object-contain flex-none"
+              className="trending-img mb-[32px] w-full max-w-[272px] h-full max-h-[232px] object-contain flex-none"
             />
 
             <span className="text-[#FB2E86] font-bold text-[16px] leading-[20px] mb-[8px]">

@@ -90,18 +90,18 @@ export default function Cart() {
         </div>
         {/* Cart Summary + Clear Cart */}
         <div className="cart-summary-col flex flex-col items-center w-full md:w-[350px]">
-          <div className="cart-summary-box max-w-[304px] w-full bg-[#F8F8FD] rounded-[12px] shadow-[0_8px_24px_rgba(0,0,0,0.05)] p-4 sm:p-8 h-fit mt-2 flex flex-col items-center">
-            <div className="w-full mb-6">
+          <div className="cart-summary-box max-w-[304px] w-full h-full max-h-[254px] bg-[#F8F8FD] rounded-[12px] shadow-[0_8px_24px_rgba(0,0,0,0.05)] p-6 mt-2 flex flex-col items-center">
+            <div className="w-full mb-2">
               <div className="flex justify-between items-center border-b border-[#E5E0FC] pb-4 mb-4">
-                <span className="font-bold text-[20px] text-[#101750]">Subtotal:</span>
+                <span className="font-bold text-[16px] leading-[20px] tracking-[1px]  text-[#101750] font-lato">Subtotal:</span>
                 <span className="font-bold text-[16px] leading-[20px] text-[#101750]">${subtotal.toFixed(2)}</span>
               </div>
               <div className="flex justify-between items-center border-b border-[#E5E0FC] pb-4 mb-4">
-                <span className="font-bold text-[20px] text-[#101750]">Total:</span>
+                <span className="font-bold text-[16px] leading-[20px] tracking-[1px] text-[#101750] font-lato">Total:</span>
                 <span className="font-bold text-[16px] leading-[20px] text-[#101750]">${subtotal.toFixed(2)}</span>
               </div>
               <div className="flex justify-between items-center mb-6">
-                <span className="text-[#8A8FB9] font-normal leading-[16px] text-[14px]">Shipping:</span>
+                <span className="text-[#8A8FB9] font-normal leading-[16px] text-[14px] font-lato">Shipping:</span>
                 <span className="text-[#8A8FB9] text-[18px]">$0.00</span>
               </div>
             </div>
@@ -110,7 +110,7 @@ export default function Cart() {
             </button>
           </div>
           <button
-            className="text-[#FB2E86] w-full text-center text-[18px] font-normal mt-8"
+            className="text-[#FB2E86] w-full text-center leading-[20px] text-[16px] font-lato font-normal mt-8"
             onClick={() => setCart([])}
           >
             Clear cart

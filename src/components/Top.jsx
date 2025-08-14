@@ -62,7 +62,7 @@ export default function Top() {
         <input type="radio" name="top-carousel" id="top-item-4" className="hidden" />
 
         {/* Dots — small pink circles like the Figma */}
-        <div className="carousel-nav flex justify-center gap-[8px] mt-[32px] mb-[88px]">
+        <div className="carousel-nav flex justify-center gap-[8px] mt-[60px] mb-[88px]">
           <label htmlFor="top-item-1" className="dot" />
           <label htmlFor="top-item-2" className="dot" />
           <label htmlFor="top-item-3" className="dot" />
